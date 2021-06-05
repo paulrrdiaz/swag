@@ -1,0 +1,24 @@
+{
+  "name": "@generates/frontdesk",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "modulize --babel",
+    "dev": "next dev --port ${PORT:-3006}",
+    "build.site": "next build",
+    "start.site": "next start"
+  },
+  "dependencies": {
+    "@generates/pagoda": "^0.0.3",
+    "@stitches/react": "^0.1.9",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.4"
+  },
+  "devDependencies": {
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.7.1"
+  }
+}
