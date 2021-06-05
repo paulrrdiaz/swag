@@ -1,3 +1,23 @@
 {
-  "name": "swag"
+  "name": "swag",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.16.0",
+    "@ianwalter/eslint-config": "^6.2.0",
+    "@ianwalter/renovate-config": "^1.4.4",
+    "ultra-runner": "^3.10.5"
+  },
+  "renovate": {
+    "extends": [
+      "@ianwalter"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@ianwalter"
+    ]
+  },
 }
