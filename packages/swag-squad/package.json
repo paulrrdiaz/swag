@@ -1,5 +1,5 @@
 {
-  "name": "@generates/frontdesk",
+  "name": "@generates/swag-squad",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "lint": "eslint .",

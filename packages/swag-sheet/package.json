@@ -1,0 +1,93 @@
+{
+  "name": "@generates/swag-sheet",
+  "version": "0.0.3",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Ian Walter",
+    "url": "https://ianwalter.dev"
+  },
+  "main": "dist/swansheet.js",
+  "module": "dist/swansheet.mjs",
+  "sideEffects": false,
+  "scripts": {
+    "lint": "eslint .",
+    "build": "modulize --babel",
+    "dev": "next dev",
+    "build.site": "next build",
+    "start.site": "next start"
+  },
+  "files": [
+    "components",
+    "dist"
+  ],
+  "homepage": "https://github.com/generates/swansheet#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/generates/swansheet.git"
+  },
+  "keywords": [
+    "react",
+    "spreadsheet",
+    "csv",
+    "upload"
+  ],
+  "bugs": {
+    "url": "https://github.com/generates/swansheet/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/ianwalter"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@generates/merger": "^0.1.3",
+    "@generates/pagoda": "^0.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@changesets/cli": "^2.16.0",
+    "@generates/modulizer": "^8.0.2",
+    "@ianwalter/eslint-config-react": "^4.1.0",
+    "@ianwalter/renovate-config": "^1.4.4",
+    "@stitches/react": "^0.1.9",
+    "papaparse": "^5.3.1",
+    "react-table": "^7.7.0",
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@stitches/react": "^0.1.9",
+    "papaparse": "^5.3.1",
+    "react-table": "^7.7.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@ianwalter/react"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": 0,
+      "react/prop-types": 0
+    }
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "renovate": {
+    "extends": [
+      "@ianwalter"
+    ]
+  }
+}
