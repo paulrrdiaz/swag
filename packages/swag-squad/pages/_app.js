@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css'
+// import 'tailwindcss/tailwind.css'
 import { global } from '@stitches/react'
 
 const globalStyles = global({

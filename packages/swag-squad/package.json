@@ -1,6 +1,7 @@
 {
   "name": "@generates/swag-squad",
   "description": "TODO",
+  "version": "0.0.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build": "modulize --babel",
@@ -13,12 +14,12 @@
     "@stitches/react": "^0.1.9"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.6",
     "next": "^10.2.3",
+    "postcss": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.7.1",
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.0",
     "tailwindcss": "^2.1.4"
   }
 }

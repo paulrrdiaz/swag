@@ -6,8 +6,8 @@ export default styled(
   {
     display: 'inline-flex',
     textAlign: 'center',
-    paddingLeft: '1em',
-    paddingRight: '1em',
+    paddingLeft: '1.25em',
+    paddingRight: '1.25em',
     lineHeight: '2.25em',
     borderWidth: '0',
     borderRadius: '1.5em',
