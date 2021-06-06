@@ -8,7 +8,7 @@ import {
 } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
-export default function LoginForm (props) {
+export default function SignInForm (props) {
   const { showRememberMe = true } = props
 
   return (
@@ -44,7 +44,7 @@ export default function LoginForm (props) {
 
       <div>
         <Button primary type="submit">
-          Login
+          Sign In
         </Button>
       </div>
 

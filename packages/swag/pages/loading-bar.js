@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@stitches/react'
-import LoadingBar from '../components/LoadingBar.mjs'
+import LoadingBar from '../components/LoadingBar.js'
 import StyledContainer from '../components/styled/StyledContainer.js'
 import Button from '../components/buttons/Button.js'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from '@stitches/react'
 import { merge } from '@generates/merger'
 import Button from './Button.js'
-import LoadingBar from '../LoadingBar.mjs'
+import LoadingBar from '../LoadingBar.js'
 
 const Wrapper = styled('div')
 

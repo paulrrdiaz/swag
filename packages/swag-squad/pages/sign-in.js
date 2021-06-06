@@ -1,6 +1,6 @@
-import LoginForm from '../components/forms/LoginForm.js'
+import SignInForm from '../components/forms/SignInForm.js'
 
-export default function LoginPage () {
+export default function SignInPage () {
 
   function login () {
 
@@ -11,7 +11,7 @@ export default function LoginPage () {
 
       <h1>Login</h1>
 
-      <LoginForm
+      <SignInForm
         onSubmit={login}
       />
 
