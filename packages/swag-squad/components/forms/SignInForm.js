@@ -1,6 +1,6 @@
 import {
   EmailField,
-  Passwordfield,
+  PasswordField,
   SwitchField,
   Button,
   StyledDiv,
@@ -19,7 +19,7 @@ export default function SignInForm (props) {
         required
       />
 
-      <Passwordfield
+      <PasswordField
         css={props.css?.passwordfield}
         required
       />

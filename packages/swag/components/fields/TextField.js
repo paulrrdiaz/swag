@@ -6,9 +6,14 @@ export default function TextField (props) {
   return (
     <div>
 
-      <StyledLabel htmlFor={props.id} css={props.styles?.label}>
-        {props.label}
-      </StyledLabel>
+      {typeof props.label === 'string'
+        ? (
+            <StyledLabel htmlFor={props.id} css={props.styles?.label}>
+              {props.label}
+            </StyledLabel>
+          )
+        : props.label
+      }
 
       {props.errorText && (
         <div>

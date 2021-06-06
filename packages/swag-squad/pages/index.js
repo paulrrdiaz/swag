@@ -36,6 +36,13 @@ export default function Home () {
             </a>
           </Link>
         </li>
+        <li>
+          <Link href="/reset-password">
+            <a>
+              Reset password
+            </a>
+          </Link>
+        </li>
       </ul>
 
     </StyledContainer>
