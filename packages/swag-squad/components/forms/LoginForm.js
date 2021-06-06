@@ -1,7 +1,7 @@
 import {
   EmailField,
   Passwordfield
-} from '@generates/pagoda'
+} from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
 export default function LoginForm (props) {

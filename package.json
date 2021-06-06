@@ -1,12 +1,15 @@
 {
   "private": true,
   "name": "swag",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "@changesets/cli": "^2.16.0",
-    "@ianwalter/eslint-config": "^6.2.0",
+    "@ianwalter/eslint-config-react": "^4.1.0",
     "@ianwalter/renovate-config": "^1.4.4",
     "ultra-runner": "^3.10.5"
   },
@@ -18,7 +21,10 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@ianwalter"
+      "@ianwalter/react"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "dist"
+  ]
 }

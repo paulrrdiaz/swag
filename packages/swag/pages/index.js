@@ -7,11 +7,11 @@ export default function Home () {
     <StyledContainer>
 
       <h1>
-        Pagoda
+        Swag
       </h1>
 
       <div>
-        A set of React components that are easy to build on
+        A set of easily extensible React components
       </div>
 
       <ul>

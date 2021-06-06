@@ -10,7 +10,6 @@
   "module": "dist/swansheet.mjs",
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint .",
     "build": "modulize --babel",
     "dev": "next dev",
     "build.site": "next build",
@@ -43,7 +42,7 @@
   },
   "dependencies": {
     "@generates/merger": "^0.1.3",
-    "@generates/pagoda": "^0.0.3"
+    "@generates/swag": "^0.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -52,8 +51,6 @@
     "@babel/preset-react": "^7.13.13",
     "@changesets/cli": "^2.16.0",
     "@generates/modulizer": "^8.0.2",
-    "@ianwalter/eslint-config-react": "^4.1.0",
-    "@ianwalter/renovate-config": "^1.4.4",
     "@stitches/react": "^0.1.9",
     "papaparse": "^5.3.1",
     "react-table": "^7.7.0",
@@ -70,24 +67,6 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
-    ]
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@ianwalter/react"
-    ],
-    "rules": {
-      "react/react-in-jsx-scope": 0,
-      "react/prop-types": 0
-    }
-  },
-  "eslintIgnore": [
-    "dist"
-  ],
-  "renovate": {
-    "extends": [
-      "@ianwalter"
     ]
   }
 }

@@ -1,4 +1,4 @@
-# @generates/pagoda
+# @generates/swag
 
 ## 0.0.3
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import Papa from 'papaparse'
-import { LoadingBar } from '@generates/pagoda'
+import { LoadingBar } from '@generates/swag'
 import { merge } from '@generates/merger'
 import Spreadsheet from './Spreadsheet.js'
 import ActionMenu from './ActionMenu.js'
