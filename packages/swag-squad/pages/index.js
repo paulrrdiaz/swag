@@ -30,6 +30,13 @@ export default function Home () {
           </Link>
         </li>
         <li>
+          <Link href="/verify-email">
+            <a>
+              Verify email
+            </a>
+          </Link>
+        </li>
+        <li>
           <Link href="/forgot-password">
             <a>
               Forgot password
