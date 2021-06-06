@@ -1,7 +1,6 @@
 import React from 'react'
 import { styled } from '@stitches/react'
-import ClearLink from './ClearLink.js'
-import ContinueButton from './ContinueButton.js'
+import { Button } from '@generates/swag'
 
 const Wrapper = styled('div', { display: 'flex', alignItems: 'center' })
 
@@ -11,16 +10,17 @@ export default function ActionMenu (props) {
   return (
     <Wrapper {...rest} css={css?.wrapper}>
 
-      <ClearLink onClick={onClear} css={css?.clearLink}>
+      <Button stop onClick={onClear} css={css?.clearButton}>
         Clear
-      </ClearLink>
+      </Button>
 
-      <ContinueButton
+      <Button
+        continue
         onClick={onContinue}
-        css={css?.continueButton}
+        css={{ marginLeft: '1em', ...css?.continueButton }}
       >
         Continue
-      </ContinueButton>
+      </Button>
 
     </Wrapper>
   )
