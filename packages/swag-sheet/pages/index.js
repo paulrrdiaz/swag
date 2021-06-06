@@ -1,13 +1,14 @@
 import React from 'react'
 import { css } from '@stitches/react'
+import { StyledContainer } from '@generates/swag'
 import Uploader from '../components/Uploader.js'
 
 export default function Home () {
   return (
-    <div className={css({ fontFamily: 'sans-serif' })()}>
+    <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
 
       <h1>
-        Swansheet
+        swag-sheet
       </h1>
 
       <div>
@@ -17,6 +18,6 @@ export default function Home () {
         />
       </div>
 
-    </div>
+    </StyledContainer>
   )
 }

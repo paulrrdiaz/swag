@@ -1,8 +1,9 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import Papa from 'papaparse'
-import { LoadingBar } from '@generates/swag'
+import { LoadingBar, StyledDiv } from '@generates/swag'
 import { merge } from '@generates/merger'
+import Dropzone from 'react-dropzone'
 import Spreadsheet from './Spreadsheet.js'
 import ActionMenu from './ActionMenu.js'
 
@@ -12,10 +13,7 @@ export default function Uploader (props) {
   const fileInput = React.useRef()
   const {
     components,
-    onClear = ctx => {
-      ctx.setData()
-      ctx.fileInput.current.value = ''
-    },
+    onClear = ctx => ctx.setData(),
     onContinue,
     onData = () => {},
     css,
@@ -25,9 +23,9 @@ export default function Uploader (props) {
   const ConfiguredActionMenu = components?.ActionMenu || ActionMenu
   const [isLoading, setIsLoading] = React.useState(false)
 
-  function handleFile (evt) {
+  function handleFile (files) {
     setIsLoading(true)
-    const [file] = evt.target.files
+    const [file] = files
     if (file) {
       Papa.parse(
         file,
@@ -56,12 +54,32 @@ export default function Uploader (props) {
         {/* File input */}
 
         <div>
-          <input
-            ref={fileInput}
-            id="swansheetFileInput"
-            type="file"
-            onChange={handleFile}
-          />
+          <Dropzone onDrop={handleFile}>
+            {({ getRootProps, getInputProps }) => (
+              <StyledDiv
+                css={{
+                  cursor: 'pointer',
+                  borderWidth: '2px',
+                  borderStyle: 'dashed',
+                  borderColor: '#3B82F6',
+                  borderRadius: '.375em',
+                  paddingTop: '1em',
+                  paddingBottom: '1em',
+                  paddingLeft: '1.25em',
+                  paddingRight: '1.25em',
+                  fontSize: '1.125em',
+                  fontWeight: '500'
+                }}
+                {...getRootProps()}
+              >
+
+                <input {...getInputProps()} />
+
+                Click here to select a file or drag and drop the file here
+
+              </StyledDiv>
+            )}
+          </Dropzone>
         </div>
 
         {/* Action menu */}
@@ -81,7 +99,10 @@ export default function Uploader (props) {
 
       {isLoading && (
         <LoadingBar
-          css={merge({ wrapper: { marginTop: '1em' } }, css?.loadingBar)}
+          css={merge(
+            { wrapper: { marginTop: '2em', marginBottom: '.5em' } },
+            css?.loadingBar
+          )}
         />
       )}
 
