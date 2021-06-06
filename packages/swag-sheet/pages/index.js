@@ -13,6 +13,7 @@ export default function Home () {
       <div>
         <Uploader
           onContinue={data => alert(JSON.stringify(data, undefined, 2))}
+          onCellUpdate={(ctx, value) => alert(value)}
         />
       </div>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import StyledTableCell from './styled/StyledTableCell.js'
 
 export default function SpreadsheetCell (props) {
+  const { canEdit = true } = props
   const [value, setValue] = React.useState(props.cell.value)
   const [css, setCss] = React.useState(props.css)
   const [isEditing, setIsEditing] = React.useState(false)
@@ -21,11 +22,11 @@ export default function SpreadsheetCell (props) {
 
   return (
     <StyledTableCell
-      onClick={() => props.canEdit && setIsEditing(true)}
+      onClick={() => canEdit && setIsEditing(true)}
       contentEditable={isEditing}
       suppressContentEditableWarning={true}
       onBlur={evt => {
-        props.onCellUpdate(ctx, evt.target.innerHTML)
+        props.onCellUpdate(ctx, evt.target.textContent)
         setIsEditing(false)
       }}
       css={css}
