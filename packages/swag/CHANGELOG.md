@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.4
+
+### Patch Changes
+
+- 6a5864b: Renaming pagoda to swag
+
 ## 0.0.3
 
 ### Patch Changes

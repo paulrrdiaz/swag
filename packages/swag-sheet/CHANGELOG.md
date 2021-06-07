@@ -1,5 +1,15 @@
 # @generates/swansheet
 
+## 0.0.4
+
+### Patch Changes
+
+- 6a5864b: Renaming swansheet to swag-sheet
+- 9a55c4b: Fixing onCellUpdate html value issue
+- 35ea0c4: Replacing file input with react-dropzone
+- Updated dependencies [6a5864b]
+  - @generates/swag@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
