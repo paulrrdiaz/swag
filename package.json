@@ -2,7 +2,8 @@
   "private": true,
   "name": "swag",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "ultra -r build"
   },
   "workspaces": [
     "packages/*"
