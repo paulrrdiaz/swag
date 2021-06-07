@@ -1,8 +1,7 @@
 import ResetPasswordForm from '../components/forms/ResetPasswordForm.js'
 
 export default function ResetPasswordPage () {
-
-  function submitForgotPassword () {
+  function resetPassword () {
 
   }
 
@@ -12,7 +11,7 @@ export default function ResetPasswordPage () {
       <h1>Reset password</h1>
 
       <ResetPasswordForm
-        onSubmit={submitForgotPassword}
+        onSubmit={resetPassword}
       />
 
     </div>

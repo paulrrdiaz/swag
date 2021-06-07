@@ -1,8 +1,7 @@
 import SignUpForm from '../components/forms/SignUpForm.js'
 
 export default function SignUpPage () {
-
-  function login () {
+  function signUp () {
 
   }
 
@@ -12,7 +11,7 @@ export default function SignUpPage () {
       <h1>Sign up</h1>
 
       <SignUpForm
-        onSubmit={login}
+        onSubmit={signUp}
       />
 
     </div>

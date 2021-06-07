@@ -1,7 +1,6 @@
 import ForgotPasswordForm from '../components/forms/ForgotPasswordForm.js'
 
 export default function ForgotPasswordPage () {
-
   function submitForgotPassword () {
 
   }
