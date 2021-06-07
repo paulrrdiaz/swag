@@ -10,7 +10,6 @@ import ActionMenu from './ActionMenu.js'
 const HeaderWrapper = styled('div', { display: 'flex', alignItems: 'center' })
 
 export default function Uploader (props) {
-  const fileInput = React.useRef()
   const {
     components,
     onClear = ctx => ctx.setData(),
@@ -85,7 +84,7 @@ export default function Uploader (props) {
         {/* Action menu */}
 
         <ConfiguredActionMenu
-          onClear={() => onClear({ setData, fileInput })}
+          onClear={() => onClear({ setData })}
           onContinue={() => onContinue(data)}
           css={merge(
             { wrapper: { marginLeft: 'auto' } },
