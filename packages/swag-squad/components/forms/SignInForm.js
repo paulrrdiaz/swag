@@ -1,7 +1,8 @@
+import React from 'react'
 import {
   EmailField,
   PasswordField,
-  SwitchField,
+  // SwitchField,
   Button,
   StyledDiv,
   StyledLink
@@ -9,7 +10,7 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function SignInForm (props) {
-  const { showRememberMe = true } = props
+  // const { showRememberMe = true } = props
 
   return (
     <StyledForm onSubmit={props.onSubmit}>
@@ -20,19 +21,19 @@ export default function SignInForm (props) {
       />
 
       <PasswordField
-        css={props.css?.passwordfield}
+        css={props.css?.passwordField}
         required
       />
 
       <StyledDiv css={{ display: 'flex', alignItems: 'center' }}>
 
-        {showRememberMe && (
+        {/* {showRememberMe && (
           <div>
             <SwitchField>
               Remember me
             </SwitchField>
           </div>
-        )}
+        )} */}
 
         <StyledDiv css={{ marginLeft: 'auto' }}>
           <StyledLink>

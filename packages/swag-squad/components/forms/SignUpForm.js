@@ -1,6 +1,7 @@
+import React from 'react'
 import {
   EmailField,
-  Passwordfield,
+  PasswordField,
   Button,
   TextField
 } from '@generates/swag'
@@ -39,7 +40,7 @@ export default function SignUpForm (props) {
         required
       />
 
-      <Passwordfield
+      <PasswordField
         css={props.css?.passwordfield}
         required
       />

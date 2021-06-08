@@ -1,4 +1,9 @@
+import React from 'react'
+import { styled } from '@stitches/react'
+import Page from '../components/app/Page.js'
 import SignUpForm from '../components/forms/SignUpForm.js'
+
+const HeadingTwo = styled('h2')
 
 export default function SignUpPage () {
   function signUp () {
@@ -6,14 +11,20 @@ export default function SignUpPage () {
   }
 
   return (
-    <div>
+    <Page>
 
-      <h1>Sign up</h1>
+      <br />
+
+      <HeadingTwo css={{ fontSize: '1.25em', textAlign: 'center' }}>
+        Sign up
+      </HeadingTwo>
+
+      <br />
 
       <SignUpForm
         onSubmit={signUp}
       />
 
-    </div>
+    </Page>
   )
 }

@@ -1,4 +1,9 @@
+import React from 'react'
+import { styled } from '@stitches/react'
+import Page from '../components/app/Page.js'
 import ForgotPasswordForm from '../components/forms/ForgotPasswordForm.js'
+
+const HeadingTwo = styled('h2')
 
 export default function ForgotPasswordPage () {
   function submitForgotPassword () {
@@ -6,14 +11,20 @@ export default function ForgotPasswordPage () {
   }
 
   return (
-    <div>
+    <Page>
 
-      <h1>Forgot password</h1>
+      <br />
+
+      <HeadingTwo css={{ fontSize: '1.25em', textAlign: 'center' }}>
+        Forgot password
+      </HeadingTwo>
+
+      <br />
 
       <ForgotPasswordForm
         onSubmit={submitForgotPassword}
       />
 
-    </div>
+    </Page>
   )
 }

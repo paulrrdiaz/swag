@@ -1,57 +1,65 @@
 import React from 'react'
 import Link from 'next/link'
-import { StyledContainer } from '@generates/swag'
+import { styled } from '@stitches/react'
+import { StyledLink } from '@generates/swag'
+import Page from '../components/app/Page.js'
+
+const UnorderedList = styled('ul')
+const HeadingTwo = styled('h2')
 
 export default function Home () {
   return (
-    <StyledContainer>
+    <Page>
 
-      <h1>
-        swag-squad
-      </h1>
+      <br />
 
-      <div>
+      <HeadingTwo css={{ fontSize: '1.25em', margin: '0' }}>
+        Examples
+      </HeadingTwo>
 
-      </div>
-
-      <ul>
+      <UnorderedList css={{
+        '& li': {
+          marginTop: '.5em',
+          marginBottom: '.5em'
+        }
+      }}>
         <li>
           <Link href="/sign-in">
-            <a>
+            <StyledLink>
               Sign in
-            </a>
+            </StyledLink>
           </Link>
         </li>
         <li>
           <Link href="/sign-up">
-            <a>
+            <StyledLink>
               Sign up
-            </a>
+            </StyledLink>
           </Link>
         </li>
         <li>
           <Link href="/verify-email">
-            <a>
+            <StyledLink>
               Verify email
-            </a>
+            </StyledLink>
           </Link>
         </li>
         <li>
           <Link href="/forgot-password">
-            <a>
+            <StyledLink>
               Forgot password
-            </a>
+            </StyledLink>
           </Link>
         </li>
         <li>
           <Link href="/reset-password">
-            <a>
+            <StyledLink>
               Reset password
-            </a>
+            </StyledLink>
           </Link>
         </li>
-      </ul>
+      </UnorderedList>
 
-    </StyledContainer>
+    </Page>
   )
 }

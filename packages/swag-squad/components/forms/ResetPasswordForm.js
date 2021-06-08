@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   EmailField,
   PasswordField,
@@ -10,6 +11,7 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function ResetPasswordForm (props) {
   const { includeToken = true } = props
+
   return (
     <StyledForm onSubmit={props.onSubmit}>
 

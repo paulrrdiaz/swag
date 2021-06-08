@@ -2,8 +2,8 @@ import { styled } from '@stitches/react'
 
 export default styled('form', {
   display: 'grid',
-  gap: '1rem',
-  gridGap: '1rem',
+  gap: '1.25em',
+  gridGap: '1.25em',
   width: '448px',
   marginLeft: 'auto',
   marginRight: 'auto',
