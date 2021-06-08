@@ -1,5 +1,14 @@
 # @generates/swansheet
 
+## 0.0.5
+
+### Patch Changes
+
+- 02eb2e2: Removing unsued fileInput ref
+- Updated dependencies [edbb741]
+- Updated dependencies [9daa8c2]
+  - @generates/swag@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "@generates/swag-squad",
   "description": "TODO",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build": "modulize --babel",
@@ -10,7 +10,7 @@
     "start.site": "next start"
   },
   "dependencies": {
-    "@generates/swag": "^0.0.4",
+    "@generates/swag": "^0.0.5",
     "@stitches/react": "^0.1.9"
   },
   "devDependencies": {

@@ -1,5 +1,12 @@
 # @generates/swag
 
+## 0.0.5
+
+### Patch Changes
+
+- edbb741: Fixing loadingbuttonl
+- 9daa8c2: Adding Alert component
+
 ## 0.0.4
 
 ### Patch Changes
