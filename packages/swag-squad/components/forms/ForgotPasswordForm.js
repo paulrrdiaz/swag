@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import {
   EmailField,
   Button
@@ -6,13 +7,16 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function ForgotPasswordForm (props) {
+  const { register, handleSubmit } = useForm()
+  
   return (
-    <StyledForm onSubmit={props.onSubmit}>
+    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         css={props.css?.emailField}
+        register={register}
         required
       />
 
@@ -21,6 +25,8 @@ export default function ForgotPasswordForm (props) {
           Submit
         </Button>
       </div>
+      
+      {props.footer}
 
     </StyledForm>
   )

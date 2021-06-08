@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
@@ -11,14 +12,16 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function ResetPasswordForm (props) {
   const { includeToken = true } = props
+  const { register, handleSubmit } = useForm()
 
   return (
-    <StyledForm onSubmit={props.onSubmit}>
+    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         css={props.css?.emailField}
+        register={register}
         required
       />
 
@@ -27,12 +30,14 @@ export default function ResetPasswordForm (props) {
           id="token"
           label="Token"
           css={props.css?.tokenField}
+          register={register}
           required
         />
       )}
 
       <PasswordField
         css={props.css?.passwordfield}
+        register={register}
         required
       />
 
@@ -47,6 +52,7 @@ export default function ResetPasswordForm (props) {
           </StyledLabel>
         }
         css={props.css?.passwordConfirmField}
+        register={register}
         required
       />
 
@@ -55,6 +61,8 @@ export default function ResetPasswordForm (props) {
           Reset Password
         </Button>
       </div>
+      
+      {props.footer}
 
     </StyledForm>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import {
   EmailField,
   Button,
@@ -8,13 +9,16 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function VerifyEmailForm (props) {
   const { includeToken = true } = props
+  const { register, handleSubmit } = useForm()
+  
   return (
-    <StyledForm onSubmit={props.onSubmit}>
+    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         css={props.css?.emailField}
+        register={register}
         required
       />
 
@@ -23,6 +27,7 @@ export default function VerifyEmailForm (props) {
           id="token"
           label="Token"
           css={props.css?.tokenField}
+          register={register}
           required
         />
       )}
@@ -34,6 +39,8 @@ export default function VerifyEmailForm (props) {
           Verify Email
         </Button>
       </div>
+      
+      {props.footer}
 
     </StyledForm>
   )

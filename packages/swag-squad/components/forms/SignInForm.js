@@ -16,6 +16,8 @@ export default function SignInForm (props) {
 
   return (
     <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    
+      {props.header}
 
       <EmailField
         css={props.css?.emailField}
@@ -52,6 +54,8 @@ export default function SignInForm (props) {
           Sign In
         </LoadingButton>
       </div>
+      
+      {props.footer}
 
     </StyledForm>
   )
