@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
-  Button,
+  LoadingButton,
   TextField
 } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
@@ -52,11 +52,11 @@ export default function SignUpForm (props) {
       />
 
       <div>
-        <Button primary type="submit">
+        <LoadingButton isLoading={props.isLoading} primary type="submit">
           Sign Up
-        </Button>
+        </LoadingButton>
       </div>
-      
+
       {props.footer}
 
     </StyledForm>

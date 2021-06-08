@@ -1,14 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import {
-  EmailField,
-  Button
-} from '@generates/swag'
+import { EmailField, LoadingButton } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
 export default function ForgotPasswordForm (props) {
   const { register, handleSubmit } = useForm()
-  
+
   return (
     <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
 
@@ -21,11 +18,11 @@ export default function ForgotPasswordForm (props) {
       />
 
       <div>
-        <Button primary type="submit">
+        <LoadingButton isLoading={props.isLoading} primary type="submit">
           Submit
-        </Button>
+        </LoadingButton>
       </div>
-      
+
       {props.footer}
 
     </StyledForm>

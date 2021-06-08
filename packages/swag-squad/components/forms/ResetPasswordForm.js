@@ -4,7 +4,7 @@ import {
   EmailField,
   PasswordField,
   StyledLabel,
-  Button,
+  LoadingButton,
   StyledSpan,
   TextField
 } from '@generates/swag'
@@ -57,11 +57,11 @@ export default function ResetPasswordForm (props) {
       />
 
       <div>
-        <Button primary type="submit">
+        <LoadingButton isLoading={props.isLoading} primary type="submit">
           Reset Password
-        </Button>
+        </LoadingButton>
       </div>
-      
+
       {props.footer}
 
     </StyledForm>
