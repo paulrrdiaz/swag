@@ -39,7 +39,7 @@ export default function LoadingButtonPage () {
 
         <div className={css({ marginRight: '1em' })()}>
           <LoadingButton isLoading={isLoading} onClick={handleClick} primary>
-            Click Here
+            Submit your response
           </LoadingButton>
         </div>
 

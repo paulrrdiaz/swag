@@ -1,4 +1,5 @@
 export { default as LoadingBar } from './components/LoadingBar.js'
+export { default as Alert } from './components/Alert.js'
 export { default as Button } from './components/buttons/Button.js'
 export { default as LoadingButton } from './components/buttons/LoadingButton.js'
 export { default as TextField } from './components/fields/TextField.js'

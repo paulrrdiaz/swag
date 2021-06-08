@@ -1,9 +1,10 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
   // SwitchField,
-  Button,
+  LoadingButton,
   StyledDiv,
   StyledLink
 } from '@generates/swag'
@@ -11,17 +12,20 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function SignInForm (props) {
   // const { showRememberMe = true } = props
+  const { register, handleSubmit } = useForm()
 
   return (
-    <StyledForm onSubmit={props.onSubmit}>
+    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
 
       <EmailField
         css={props.css?.emailField}
+        register={register}
         required
       />
 
       <PasswordField
         css={props.css?.passwordField}
+        register={register}
         required
       />
 
@@ -44,9 +48,9 @@ export default function SignInForm (props) {
       </StyledDiv>
 
       <div>
-        <Button primary type="submit">
+        <LoadingButton isLoading={props.isLoading} primary type="submit">
           Sign In
-        </Button>
+        </LoadingButton>
       </div>
 
     </StyledForm>

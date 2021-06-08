@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import { styled } from '@stitches/react'
 import StyledContainer from '../components/styled/StyledContainer.js'
+
+const UnorderedList = styled('ul')
 
 export default function Home () {
   return (
@@ -14,7 +17,12 @@ export default function Home () {
         A set of easily extensible React components
       </div>
 
-      <ul>
+      <UnorderedList css={{
+        '& li': {
+          marginTop: '.5em',
+          marginBottom: '.5em'
+        }
+      }}>
         <li>
           <Link href="/loading-bar">
             <a>
@@ -43,7 +51,7 @@ export default function Home () {
             </a>
           </Link>
         </li>
-      </ul>
+      </UnorderedList>
 
     </StyledContainer>
   )

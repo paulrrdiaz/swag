@@ -5,14 +5,8 @@ import StyledButton from './styled/StyledButton.js'
 import transition from '../styles/transition.js'
 
 export default function Alert (props) {
-  const givenIsDisplayed = props.isDisplayed === undefined
-    ? true
-    : props.isDisplayed
-  const [isDisplayed, setIsDisplayed] = React.useState(givenIsDisplayed)
-
   const css = {
     display: 'flex',
-    alignItems: 'center',
     padding: '.5em',
     borderRadius: '.375em',
     ...props.level === 'success' && {
@@ -25,15 +19,15 @@ export default function Alert (props) {
     ...props.css
   }
 
-  return isDisplayed && (
+  return (
     <StyledDiv css={css}>
 
       <StyledDiv css={{ padding: '.5em' }}>
         {props.children}
       </StyledDiv>
 
-      {props.canClose && (
-        <StyledDiv css={{ marginLeft: 'auto', marginRight: '.25em' }}>
+      {props.onClose && (
+        <StyledDiv css={{ marginLeft: 'auto' }}>
           <StyledButton
             type="button"
             css={{
@@ -55,7 +49,7 @@ export default function Alert (props) {
                 outline: 'none'
               }
             }}
-            onClick={() => setIsDisplayed(false)}
+            onClick={props.onClose}
           >
             <HiX aria-hidden="true" />
           </StyledButton>

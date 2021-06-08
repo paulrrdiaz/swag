@@ -22,7 +22,7 @@ export default function TextField (props) {
       )}
 
       <StyledInput
-        // {...props.register(props.id, props.required)}
+        {...props.register && props.register(props.id, props.required)}
         type={props.type || 'text'}
         id={props.id}
         required={props.required}
