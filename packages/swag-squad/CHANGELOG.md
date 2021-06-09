@@ -1,5 +1,11 @@
 # @generates/swag-squad
 
+## 0.0.3
+
+### Patch Changes
+
+- b387d59: Adding package.json config
+
 ## 0.0.2
 
 ### Patch Changes
