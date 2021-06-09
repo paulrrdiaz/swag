@@ -1,7 +1,7 @@
 {
   "name": "@generates/swag-squad",
   "description": "TODO",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/swag-squad.js",
   "module": "dist/swag-squad.mjs",
@@ -31,7 +31,7 @@
     "postcss": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.8.1",
+    "react-hook-form": "^7.8.3",
     "tailwindcss": "^2.1.4"
   },
   "babel": {
