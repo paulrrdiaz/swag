@@ -6,12 +6,12 @@
     "name": "Ian Walter",
     "url": "https://ianwalter.dev"
   },
-  "main": "dist/swansheet.js",
-  "module": "dist/swansheet.mjs",
+  "main": "dist/swag-sheet.js",
+  "module": "dist/swag-sheet.mjs",
   "sideEffects": false,
   "scripts": {
     "build": "modulize --babel",
-    "dev": "next dev",
+    "dev": "next dev --port ${PORT:-3005}",
     "build.site": "next build",
     "start.site": "next start"
   },
@@ -19,10 +19,11 @@
     "components",
     "dist"
   ],
-  "homepage": "https://github.com/generates/swansheet#readme",
+  "homepage": "https://github.com/generates/swag#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/generates/swansheet.git"
+    "url": "git+https://github.com/generates/swag.git",
+    "directory": "packages/swag-sheet"
   },
   "keywords": [
     "react",
@@ -31,7 +32,7 @@
     "upload"
   ],
   "bugs": {
-    "url": "https://github.com/generates/swansheet/issues"
+    "url": "https://github.com/generates/swag/issues"
   },
   "funding": {
     "type": "github",
@@ -47,6 +48,11 @@
     "react-dropzone": "^11.3.2",
     "yarn": "^1.22.10"
   },
+  "peerDependencies": {
+    "@stitches/react": "^0.1.9",
+    "papaparse": "^5.3.1",
+    "react-table": "^7.7.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
@@ -59,11 +65,6 @@
     "papaparse": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-table": "^7.7.0"
-  },
-  "peerDependencies": {
-    "@stitches/react": "^0.1.9",
-    "papaparse": "^5.3.1",
     "react-table": "^7.7.0"
   },
   "babel": {

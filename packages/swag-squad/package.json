@@ -3,14 +3,23 @@
   "description": "TODO",
   "version": "0.0.2",
   "license": "SEE LICENSE IN LICENSE",
+  "main": "dist/swag-squad.js",
+  "module": "dist/swag-squad.mjs",
+  "sideEffects": false,
   "scripts": {
     "build": "modulize --babel",
     "dev": "next dev --port ${PORT:-3006}",
     "build.site": "next build",
     "start.site": "next start"
   },
+  "files": [
+    "components",
+    "dist"
+  ],
   "dependencies": {
-    "@generates/swag": "^0.0.5",
+    "@generates/swag": "^0.0.5"
+  },
+  "peerDependencies": {
     "@stitches/react": "^0.1.9"
   },
   "devDependencies": {
