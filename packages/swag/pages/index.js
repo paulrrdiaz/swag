@@ -51,6 +51,13 @@ export default function Home () {
             </a>
           </Link>
         </li>
+        <li>
+          <Link href="/alert">
+            <a>
+              Alert
+            </a>
+          </Link>
+        </li>
       </UnorderedList>
 
     </StyledContainer>
