@@ -1,5 +1,14 @@
 # @generates/swag-squad
 
+## 0.0.4
+
+### Patch Changes
+
+- 7ab85e9: Adding "react-hook-form" as peerDep
+- eb86374: Improving form colors
+- Updated dependencies [eb86374]
+  - @generates/swag@0.0.6
+
 ## 0.0.3
 
 ### Patch Changes

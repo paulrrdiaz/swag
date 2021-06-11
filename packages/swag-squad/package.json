@@ -1,7 +1,7 @@
 {
   "name": "@generates/swag-squad",
   "description": "TODO",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/swag-squad.js",
   "module": "dist/swag-squad.mjs",
@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "@generates/swag": "^0.0.5"
+    "@generates/swag": "^0.0.6"
   },
   "peerDependencies": {
     "@stitches/react": "^0.1.9",
