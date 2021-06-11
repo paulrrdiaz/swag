@@ -58,6 +58,13 @@ export default function Home () {
             </StyledLink>
           </Link>
         </li>
+        <li>
+          <Link href="/user-menu">
+            <StyledLink>
+              User Menu
+            </StyledLink>
+          </Link>
+        </li>
       </UnorderedList>
 
     </Page>
