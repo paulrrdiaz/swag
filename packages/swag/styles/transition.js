@@ -1,5 +1,5 @@
 export default {
   transitionProperty: 'all',
-  transitionDuration: '.25s',
+  transitionDuration: '.15s',
   transitionTimingFunction: 'ease-in'
 }

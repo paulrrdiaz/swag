@@ -11,7 +11,15 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function SignInForm (props) {
-  // const { showRememberMe = true } = props
+  const {
+    // showRememberMe = true
+    forgotPasswordLinkProps = { href: '/forgot-password' },
+    forgotPasswordLink = (
+      <StyledLink {...forgotPasswordLinkProps}>
+        Forgot password?
+      </StyledLink>
+    )
+  } = props
   const { register, handleSubmit } = useForm()
 
   return (
@@ -42,9 +50,7 @@ export default function SignInForm (props) {
         )} */}
 
         <StyledDiv css={{ marginLeft: 'auto' }}>
-          <StyledLink>
-            Forgot password?
-          </StyledLink>
+          {forgotPasswordLink}
         </StyledDiv>
 
       </StyledDiv>
