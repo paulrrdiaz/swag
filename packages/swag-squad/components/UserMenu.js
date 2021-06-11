@@ -8,8 +8,18 @@ const StyledImage = styled('img')
 
 export default function UserMenu (props) {
   const popover = css({ position: 'relative' })
-  const panel = css({ position: 'absolute', zIndex: 10 })
-  const button = css({ padding: '0', border: '0' })
+  const panel = css(merge(
+    {
+      position: 'absolute',
+      zIndex: 10,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      padding: '1em',
+      backgroundColor: '#F5F5F5',
+      borderRadius: '.375em'
+    },
+    props.css?.content
+  ))
+  const button = css({ padding: '0', border: '0', borderRadius: '100%' })
   const avatar = merge(
     {
       height: '3em',
@@ -18,12 +28,6 @@ export default function UserMenu (props) {
       cursor: 'pointer'
     },
     props.css?.avatar
-  )
-  const content = merge(
-    {
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-    },
-    props.css?.content
   )
 
   return (
@@ -37,13 +41,9 @@ export default function UserMenu (props) {
       </Popover.Button>
 
       <Popover.Panel className={panel()}>
-        <StyledDiv css={content} className="grid grid-cols-2">
-          <a href="/analytics">Analytics</a>
-          <a href="/engagement">Engagement</a>
-          <a href="/security">Security</a>
-          <a href="/integrations">Integrations</a>
-        </StyledDiv>
+        {props.children}
       </Popover.Panel>
+
     </Popover>
   )
 }
