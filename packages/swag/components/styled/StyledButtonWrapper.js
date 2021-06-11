@@ -1,6 +1,3 @@
 import { styled } from '@stitches/react'
 
-export default styled(
-  'div',
-  { position: 'absolute', top: '.8125em', right: '.625em' }
-)
+export default styled('div', { position: 'absolute', right: '.625em' })

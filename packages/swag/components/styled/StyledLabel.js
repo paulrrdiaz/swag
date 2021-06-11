@@ -1,8 +1,9 @@
 import { styled } from '@stitches/react'
 
 export default styled('label', {
-  color: '#1F2937',
+  display: 'inline-block',
+  color: '#404040',
   fontWeight: '500',
-  lineHeight: '1.5em',
+  paddingBottom: '.25em',
   cursor: 'pointer'
 })
