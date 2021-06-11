@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.6
+
+### Patch Changes
+
+- eb86374: Improving form colors
+
 ## 0.0.5
 
 ### Patch Changes
