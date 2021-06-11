@@ -23,7 +23,7 @@ const Bar = styled(
     right: '-32px',
     top: '0',
     bottom: '0',
-    backgroundColor: '#E5E7EB',
+    backgroundColor: '#F1F5F9',
     backgroundSize: '32px 32px',
     ...transition
   }
