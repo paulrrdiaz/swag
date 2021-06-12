@@ -59,6 +59,7 @@ export default function UserMenu (props) {
             <Popover.Button ref={setReferenceElement} className={button()}>
               <Avatar image={props.avatar} name={props.name} />
             </Popover.Button>
+
             {/* NOTE: Panel transition not working properly. */}
             {/* <Transition
               enter={css(transition)().className}

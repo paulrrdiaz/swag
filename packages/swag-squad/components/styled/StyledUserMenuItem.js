@@ -2,7 +2,7 @@ import { styled } from '@stitches/react'
 import { transition } from '@generates/swag'
 
 export default styled(
-  'div',
+  'a',
   {
     cursor: 'pointer',
     display: 'flex',
