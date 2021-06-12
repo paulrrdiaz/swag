@@ -79,6 +79,7 @@ export default function UserMenuPage () {
         }}
       >
         <UserMenu
+          name="dink double"
           avatar="/img/avatar.jpeg"
           css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
         >
@@ -97,6 +98,7 @@ export default function UserMenuPage () {
         }}
       >
         <UserMenu
+          name="go yubari"
           css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
         >
           <Nav />
@@ -114,6 +116,7 @@ export default function UserMenuPage () {
         }}
       >
         <UserMenu
+          name="po boy"
           avatar="/img/avatar.jpeg"
           css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
         >
