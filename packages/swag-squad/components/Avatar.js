@@ -21,7 +21,7 @@ export default function Avatar (props) {
               size={size}
               name={props.name}
               variant="marble"
-              colors={['#D09E88', '#FADAD8', '#534847', '#9B8281', '#ABD0CE']}
+              colors={['#10B981', '#6366F1', '#F43F5E', '#F59E0B']}
             />
           )
       }
