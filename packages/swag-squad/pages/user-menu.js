@@ -1,11 +1,77 @@
 import React from 'react'
-import { styled } from '@stitches/react'
-import { StyledDiv } from '@generates/swag'
-import { HiOutlineLogout } from 'react-icons/hi'
+import { css, styled } from '@stitches/react'
+import { StyledDiv, transition } from '@generates/swag'
+import {
+  HiOutlineUserCircle,
+  HiOutlineAdjustments,
+  HiOutlineSupport,
+  HiOutlineLogout
+} from 'react-icons/hi'
 import Page from '../components/app/Page.js'
 import UserMenu from '../components/UserMenu.js'
 
 const HeadingTwo = styled('h2')
+const NavItem = styled(
+  'div',
+  {
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: '1em',
+    paddingRight: '1em',
+    paddingTop: '.75em',
+    paddingBottom: '.75em',
+    fontSize: '.825em',
+    fontWeight: '500',
+    color: '#4B5563',
+    ...transition,
+    '&:hover': {
+      backgroundColor: '#E5E5E5',
+      color: '#111827'
+    }
+  }
+)
+const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })
+
+function Nav () {
+  return (
+    <StyledDiv css={{ display: 'grid', overflow: 'hidden' }}>
+
+      <NavItem>
+
+        <HiOutlineUserCircle className={navIcon()} />
+
+        My Profile
+
+      </NavItem>
+
+      <NavItem>
+
+        <HiOutlineAdjustments className={navIcon()} />
+
+        Account Settings
+
+      </NavItem>
+
+      <NavItem>
+
+        <HiOutlineSupport className={navIcon()} />
+
+        Support
+
+      </NavItem>
+
+      <NavItem>
+
+        <HiOutlineLogout className={navIcon()} />
+
+        Sign Out
+
+      </NavItem>
+
+    </StyledDiv>
+  )
+}
 
 export default function UserMenuPage () {
   return (
@@ -21,42 +87,56 @@ export default function UserMenuPage () {
 
       <StyledDiv
         css={{
+          display: 'flex',
           backgroundColor: '#171717',
           borderRadius: '.375em',
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: '512px',
-          padding: '1em',
-          height: '20em'
+          maxWidth: '256px',
+          padding: '2em 5em 5em 5em',
+          height: '10em'
         }}
       >
         <UserMenu
           avatar="/img/avatar.jpeg"
-          css={{}}
+          css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
         >
-          <StyledDiv css={{ display: 'grid', gap: '4' }}>
-            <div>
+          <Nav />
+        </UserMenu>
+      </StyledDiv>
 
-              <HiOutlineLogout />
+      <StyledDiv
+        css={{
+          display: 'flex',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: '256px',
+          padding: '2em 5em 5em 5em',
+          height: '10em'
+        }}
+      >
+        <UserMenu
+          css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
+        >
+          <Nav />
+        </UserMenu>
+      </StyledDiv>
 
-              Sign Out
-
-            </div>
-            <div>
-
-              <HiOutlineLogout />
-
-              Sign Out
-
-            </div>
-            <div>
-
-              <HiOutlineLogout />
-
-              Sign Out
-
-            </div>
-          </StyledDiv>
+      <StyledDiv
+        css={{
+          display: 'flex',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: '256px',
+          padding: '2em 5em 5em 5em',
+          height: '10em'
+        }}
+      >
+        <UserMenu
+          avatar="/img/avatar.jpeg"
+          css={{ popover: { marginLeft: 'auto', marginRight: 'auto' } }}
+        >
+          <Nav />
         </UserMenu>
       </StyledDiv>
 

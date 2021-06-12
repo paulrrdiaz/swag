@@ -5,7 +5,7 @@ import { global } from '@stitches/react'
 const globalStyles = global({
   body: {
     fontFamily: 'Inter',
-    backgroundColor: '##FAFAFA'
+    backgroundColor: '#F5F5F5'
   }
 })
 

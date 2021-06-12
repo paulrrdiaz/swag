@@ -59,6 +59,13 @@ export default function Home () {
           </Link>
         </li>
         <li>
+          <Link href="/avatar">
+            <StyledLink>
+              Avatar
+            </StyledLink>
+          </Link>
+        </li>
+        <li>
           <Link href="/user-menu">
             <StyledLink>
               User Menu
