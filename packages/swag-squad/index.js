@@ -1,5 +1,8 @@
 export { default as StyledForm } from './components/styled/StyledForm.js'
 export {
+  default as StyledUserMenuItem
+} from './components/styled/StyledUserMenuItem.js'
+export {
   default as ForgotPasswordForm
 } from './components/forms/ForgotPasswordForm.js'
 export {

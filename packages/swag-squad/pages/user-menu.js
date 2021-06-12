@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, styled } from '@stitches/react'
-import { StyledDiv, transition } from '@generates/swag'
+import { StyledDiv } from '@generates/swag'
 import {
   HiOutlineUserCircle,
   HiOutlineAdjustments,
@@ -9,65 +9,46 @@ import {
 } from 'react-icons/hi'
 import Page from '../components/app/Page.js'
 import UserMenu from '../components/UserMenu.js'
+import StyledUserMenuItem from '../components/styled/StyledUserMenuItem.js'
 
 const HeadingTwo = styled('h2')
-const NavItem = styled(
-  'div',
-  {
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: '1em',
-    paddingRight: '1em',
-    paddingTop: '.75em',
-    paddingBottom: '.75em',
-    fontSize: '.825em',
-    fontWeight: '500',
-    color: '#4B5563',
-    ...transition,
-    '&:hover': {
-      backgroundColor: '#E5E5E5',
-      color: '#111827'
-    }
-  }
-)
-const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })
+const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })()
 
 function Nav () {
   return (
-    <StyledDiv css={{ display: 'grid', overflow: 'hidden' }}>
+    <StyledDiv css={{ display: 'grid' }}>
 
-      <NavItem>
+      <StyledUserMenuItem>
 
-        <HiOutlineUserCircle className={navIcon()} />
+        <HiOutlineUserCircle className={navIcon} />
 
         My Profile
 
-      </NavItem>
+      </StyledUserMenuItem>
 
-      <NavItem>
+      <StyledUserMenuItem>
 
-        <HiOutlineAdjustments className={navIcon()} />
+        <HiOutlineAdjustments className={navIcon} />
 
         Account Settings
 
-      </NavItem>
+      </StyledUserMenuItem>
 
-      <NavItem>
+      <StyledUserMenuItem>
 
-        <HiOutlineSupport className={navIcon()} />
+        <HiOutlineSupport className={navIcon} />
 
         Support
 
-      </NavItem>
+      </StyledUserMenuItem>
 
-      <NavItem>
+      <StyledUserMenuItem>
 
-        <HiOutlineLogout className={navIcon()} />
+        <HiOutlineLogout className={navIcon} />
 
         Sign Out
 
-      </NavItem>
+      </StyledUserMenuItem>
 
     </StyledDiv>
   )
