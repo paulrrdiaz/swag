@@ -1,5 +1,16 @@
 # @generates/swag-squad
 
+## 0.0.5
+
+### Patch Changes
+
+- eb74d76: Moving StyledUserMenuItem to its own component
+- 315d5b6: Adding Avatar and UserMenu components
+- 00d1d2e: Shortening transition to 150ms
+- Updated dependencies [6a27c15]
+- Updated dependencies [00d1d2e]
+  - @generates/swag@0.0.7
+
 ## 0.0.4
 
 ### Patch Changes
