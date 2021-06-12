@@ -1,5 +1,12 @@
 # @generates/swag
 
+## 0.0.7
+
+### Patch Changes
+
+- 6a27c15: Adding other alert levels and shouldScrollTo prop
+- 00d1d2e: Shortening transition to 150ms
+
 ## 0.0.6
 
 ### Patch Changes
