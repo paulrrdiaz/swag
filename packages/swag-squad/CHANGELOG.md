@@ -1,5 +1,11 @@
 # @generates/swag-squad
 
+## 0.0.7
+
+### Patch Changes
+
+- 47fc73e: Trying to fix avatart size
+
 ## 0.0.6
 
 ### Patch Changes
