@@ -2,28 +2,36 @@ import React from 'react'
 import { styled } from '@stitches/react'
 import { StyledDiv } from '@generates/swag'
 import { merge } from '@generates/merger'
-import BoringAvatar from 'boring-avatars'
+import { HiOutlineUserCircle } from 'react-icons/hi'
 
 const StyledImage = styled('img')
 
 export default function Avatar (props) {
-  const { size = '4em' } = props
-  const css = merge(
-    { height: size, width: size, borderRadius: '100%' },
+  const { size = '2em' } = props
+  const container = merge(
+    {
+      height: size,
+      width: size,
+      borderRadius: '100%',
+      background: 'linear-gradient(#38BDF8, #0284C7)',
+      color: '#fff',
+      overflow: 'hidden',
+      fontSize: '2.5em',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      '& > svg > path': {
+        strokeWidth: '1.5'
+      }
+    },
     props.css
   )
+
   return (
-    <StyledDiv css={css}>
+    <StyledDiv css={container}>
       {props.image
-        ? <StyledImage src={props.image} css={css} />
-        : (
-            <BoringAvatar
-              size={size}
-              name={props.name}
-              variant="marble"
-              colors={['#10B981', '#6366F1', '#F43F5E', '#F59E0B']}
-            />
-          )
+        ? <StyledImage src={props.image} css={{ width: '100%' }} />
+        : <HiOutlineUserCircle />
       }
     </StyledDiv>
   )
