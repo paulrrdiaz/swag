@@ -1,7 +1,7 @@
 {
   "name": "@generates/swag-squad",
   "description": "TODO",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/swag-squad.js",
   "module": "dist/swag-squad.mjs",
