@@ -45,7 +45,10 @@ export default function UserMenu (props) {
             borderWidth: '1px',
             borderColor: '#E5E5E5',
             borderRadius: '100%',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            '&:focus': {
+              outline: '0'
+            }
             // ...transition
           },
           props.css?.button,
@@ -57,7 +60,11 @@ export default function UserMenu (props) {
           <>
 
             <Popover.Button ref={setReferenceElement} className={button()}>
-              <Avatar image={props.avatar} name={props.name} />
+              <Avatar
+                image={props.avatar}
+                size={props.size}
+                css={props.css?.avatar}
+              />
             </Popover.Button>
 
             {/* NOTE: Panel transition not working properly. */}

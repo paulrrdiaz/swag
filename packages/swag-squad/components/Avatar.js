@@ -7,7 +7,7 @@ import { HiOutlineUserCircle } from 'react-icons/hi'
 const StyledImage = styled('img')
 
 export default function Avatar (props) {
-  const { size = '2em' } = props
+  const { size = '1.5em' } = props
   const container = merge(
     {
       height: size,
@@ -16,7 +16,7 @@ export default function Avatar (props) {
       background: 'linear-gradient(#38BDF8, #0284C7)',
       color: '#fff',
       overflow: 'hidden',
-      fontSize: '2.5em',
+      fontSize: '2em',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

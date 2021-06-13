@@ -11,7 +11,7 @@ export default styled(
     paddingRight: '1em',
     paddingTop: '.75em',
     paddingBottom: '.75em',
-    fontSize: '.825em',
+    fontSize: '.925em',
     fontWeight: '500',
     color: '#4B5563',
     ...transition,
