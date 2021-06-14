@@ -1,5 +1,11 @@
 # @generates/swag-squad
 
+## 0.0.8
+
+### Patch Changes
+
+- 5c9c2fc: Adding AccountForm and ChangePasswordForm
+
 ## 0.0.7
 
 ### Patch Changes
