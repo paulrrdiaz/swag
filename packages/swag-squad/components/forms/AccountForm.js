@@ -9,7 +9,7 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function AccountForm (props) {
-  const { showName = true } = props
+  const { showName = true, showUsername = false } = props
   const { register, handleSubmit } = useForm()
 
   return (
@@ -37,6 +37,16 @@ export default function AccountForm (props) {
           />
 
         </>
+      )}
+
+      {showUsername && (
+        <TextField
+          id="username"
+          label="Username"
+          css={props.css?.usernameField}
+          register={register}
+          required
+        />
       )}
 
       <EmailField
