@@ -22,11 +22,13 @@ export default function SpreadsheetCell (props) {
 
   return (
     <StyledTableCell
+      data-col={props.cell.column.id}
+      data-id={`${props.rowId}.${props.cell.column.id}`}
       onClick={() => canEdit && setIsEditing(true)}
       contentEditable={isEditing}
       suppressContentEditableWarning={true}
       onBlur={evt => {
-        props.onCellUpdate(ctx, evt.target.textContent)
+        props.onCellUpdate(ctx, evt.target.textContent || '')
         setIsEditing(false)
       }}
       css={css}

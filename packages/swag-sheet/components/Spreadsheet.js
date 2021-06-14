@@ -1,19 +1,27 @@
 import React from 'react'
 import { styled } from '@stitches/react'
-import { useTable } from 'react-table'
+import { useTable, useFilters, useSortBy } from 'react-table'
+import { StyledDiv } from '@generates/swag'
+import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
+import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
 import StyledTableHeader from './styled/StyledTableHeader.js'
 import SpreadsheetCell from './SpreadsheetCell.js'
 
 const Wrapper = styled('div', { overflowX: 'scroll' })
+const StyledTr = styled('tr')
 
 export default function Spreadsheet (props) {
   const [firstRow] = props.data || []
   const columns = React.useMemo(
-    () => props.columns || Object.keys(firstRow || {}).map(header => ({
-      id: header,
-      accessor: header
-    })),
+    () => props.columns.map(col => merge(
+      { disableSortBy: !col.canSort, disableFilters: !col.canFilter },
+      col
+    )) ||
+      Object.keys(firstRow || {}).map(header => ({
+        id: header,
+        accessor: header
+      })),
     [
       props.columns,
       firstRow
@@ -37,10 +45,16 @@ export default function Spreadsheet (props) {
     headerGroups,
     rows,
     prepareRow
-  } = useTable({
-    columns,
-    data: memoizedData
-  })
+  } = useTable(
+    {
+      columns,
+      data: memoizedData,
+      manualSortBy: true,
+      manualFilters: true
+    },
+    useFilters,
+    useSortBy
+  )
 
   return (
     <Wrapper css={props.css?.wrapper}>
@@ -52,14 +66,43 @@ export default function Spreadsheet (props) {
               return (
                 <tr {...rest} key={key}>
                   {headerGroup.headers.map(column => {
-                    const { key, ...rest } = column.getHeaderProps()
+                    const sortBy = column.getSortByToggleProps()
+                    const { key, ...rest } = column.getHeaderProps(sortBy)
                     return (
                       <StyledTableHeader
                         {...rest}
                         key={key}
                         css={props.css?.tableHeader}
                       >
-                        {column.id}
+                        <StyledDiv
+                          css={{ display: 'flex', alignItems: 'center' }}
+                        >
+
+                          <div>
+                            {column.id}
+                          </div>
+
+                          {column.canSort && (
+                            <StyledDiv css={{
+                              height: '1em',
+                              width: '1em',
+                              paddingLeft: '.5em'
+                            }}>
+                              {column.isSorted
+                                ? column.isSortedDesc
+                                  ? <HiChevronDown />
+                                  : <HiChevronUp />
+                                : ''
+                              }
+                            </StyledDiv>
+                          )}
+
+                        </StyledDiv>
+
+                        <div>
+                          {column.canFilter && column.render('Filter')}
+                        </div>
+
                       </StyledTableHeader>
                     )
                   })}
@@ -68,25 +111,34 @@ export default function Spreadsheet (props) {
             })}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {rows.map(row => {
+            {rows.map((row, index) => {
               prepareRow(row)
               const { key, ...rest } = row.getRowProps()
+              const rowId = row.values[props.rowIdKey] || key
               return (
-                <tr {...rest} key={key}>
+                <StyledTr
+                  key={key}
+                  data-id={rowId}
+                  css={{
+                    backgroundColor: index % 2 === 0 ? '#fff' : '#FAFAFA'
+                  }}
+                  {...rest}
+                >
                   {row.cells.map(cell => {
                     const { key, ...rest } = cell.getCellProps()
                     return (
                       <SpreadsheetCell
-                        {...rest}
                         key={key}
                         cell={cell}
                         styles={props.css?.tableCell}
                         onCellUpdate={onCellUpdate}
                         canEdit={props.canEdit}
+                        rowId={rowId}
+                        {...rest}
                       />
                     )
                   })}
-                </tr>
+                </StyledTr>
               )
             })}
           </tbody>
