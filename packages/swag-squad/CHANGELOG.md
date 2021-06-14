@@ -1,5 +1,11 @@
 # @generates/swag-squad
 
+## 0.0.9
+
+### Patch Changes
+
+- 130e771: Adding username to forms
+
 ## 0.0.8
 
 ### Patch Changes
