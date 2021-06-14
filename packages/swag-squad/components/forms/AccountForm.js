@@ -10,7 +10,9 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function AccountForm (props) {
   const { showName = true, showUsername = false } = props
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm({
+    defaultValues: props.defaultValues
+  })
 
   return (
     <StyledForm onSubmit={handleSubmit(props.onSubmit)}>

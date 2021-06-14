@@ -12,7 +12,9 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function ResetPasswordForm (props) {
   const { includeToken = true } = props
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm({
+    defaultValues: props.defaultValues
+  })
 
   return (
     <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
