@@ -1,5 +1,14 @@
 # @generates/swag-squad
 
+## 0.0.11
+
+### Patch Changes
+
+- 4e95972: Adding feedback to forms
+- 6928d99: Adding autocomplete props to password fields
+- Updated dependencies [4e95972]
+  - @generates/swag@0.0.8
+
 ## 0.0.10
 
 ### Patch Changes

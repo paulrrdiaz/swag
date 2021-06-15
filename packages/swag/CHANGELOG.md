@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.8
+
+### Patch Changes
+
+- 4e95972: Adding feedback to forms
+
 ## 0.0.7
 
 ### Patch Changes
