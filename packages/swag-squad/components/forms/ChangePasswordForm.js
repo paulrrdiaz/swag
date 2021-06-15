@@ -12,6 +12,7 @@ export default function ChangePasswordForm (props) {
       {props.header}
 
       <PasswordField
+        id="existingPassword"
         label="Existing password"
         css={props.css?.passwordfield}
         register={register}

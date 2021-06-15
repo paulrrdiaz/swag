@@ -1,5 +1,11 @@
 # @generates/swag-squad
 
+## 0.0.10
+
+### Patch Changes
+
+- 1796de3: Adding default values to forms
+
 ## 0.0.9
 
 ### Patch Changes
