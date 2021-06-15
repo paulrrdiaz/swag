@@ -56,6 +56,7 @@ export default function Alert (props) {
               display: 'inline-flex',
               padding: '.25em',
               fontSize: '1.25em',
+              textAlign: 'left',
               borderRadius: '.375em',
               backgroundColor: 'transparent',
               border: 'none',
