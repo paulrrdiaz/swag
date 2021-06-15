@@ -28,12 +28,14 @@ export default function SignInForm (props) {
       {props.header}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required
       />
 
       <PasswordField
+        feedback={props.feedback?.password}
         css={props.css?.passwordField}
         register={register}
         required

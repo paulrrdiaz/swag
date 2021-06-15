@@ -22,6 +22,7 @@ export default function ResetPasswordForm (props) {
       {props.header}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required
@@ -31,6 +32,7 @@ export default function ResetPasswordForm (props) {
         <TextField
           id="token"
           label="Token"
+          feedback={props.feedback?.token}
           css={props.css?.tokenField}
           register={register}
           required
@@ -38,6 +40,7 @@ export default function ResetPasswordForm (props) {
       )}
 
       <PasswordField
+        feedback={props.feedback?.password}
         css={props.css?.passwordfield}
         register={register}
         required
@@ -53,6 +56,7 @@ export default function ResetPasswordForm (props) {
             </StyledSpan>
           </StyledLabel>
         }
+        feedback={props.feedback?.passwordConfirm}
         css={props.css?.passwordConfirmField}
         register={register}
         required

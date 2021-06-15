@@ -15,6 +15,7 @@ export default function VerifyEmailForm (props) {
       {props.header}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required
@@ -24,6 +25,7 @@ export default function VerifyEmailForm (props) {
         <TextField
           id="token"
           label="Token"
+          feedback={props.feedback?.token}
           css={props.css?.tokenField}
           register={register}
           required

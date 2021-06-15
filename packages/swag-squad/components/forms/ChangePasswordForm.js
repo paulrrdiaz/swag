@@ -14,6 +14,7 @@ export default function ChangePasswordForm (props) {
       <PasswordField
         id="existingPassword"
         label="Existing password"
+        feedback={props.feedback?.existingPassword}
         css={props.css?.passwordfield}
         register={register}
         autocomplete="current-password"
@@ -23,6 +24,7 @@ export default function ChangePasswordForm (props) {
       <PasswordField
         id="newPassword"
         label="New password"
+        feedback={props.feedback?.newPassword}
         css={props.css?.newPasswordField}
         register={register}
         autocomplete="new-password"

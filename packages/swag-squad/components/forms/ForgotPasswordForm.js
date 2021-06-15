@@ -12,6 +12,7 @@ export default function ForgotPasswordForm (props) {
       {props.header}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required

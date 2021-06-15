@@ -4,6 +4,7 @@ import StyledInput from '../styled/StyledInput.js'
 import StyledFieldWrapper from '../styled/StyledFieldWrapper.js'
 import StyledButtonWrapper from '../styled/StyledButtonWrapper.js'
 import Button from '../buttons/Button.js'
+import StyledDiv from '../styled/StyledDiv.js'
 
 export default function PasswordField (props) {
   const { id = 'password', label = 'Password' } = props
@@ -16,10 +17,16 @@ export default function PasswordField (props) {
         {label}
       </StyledLabel>
 
-      {props.errorText && (
-        <div>
-          {props.errorText}
-        </div>
+      {props.feedback && (
+        <StyledDiv css={{
+          color: '#EF4444',
+          marginTop: '.5em',
+          marginBottom: '.5em',
+          fontSize: '.925em',
+          fontWeight: '500'
+        }}>
+          {props.feedback}
+        </StyledDiv>
       )}
 
       <StyledFieldWrapper>

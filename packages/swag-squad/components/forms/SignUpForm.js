@@ -23,6 +23,7 @@ export default function SignUpForm (props) {
           <TextField
             id="firstName"
             label="First name"
+            feedback={props.feedback?.firstName}
             css={props.css?.firstNameField}
             register={register}
             required
@@ -31,6 +32,7 @@ export default function SignUpForm (props) {
           <TextField
             id="lastName"
             label="Last name"
+            feedback={props.feedback?.lastName}
             css={props.css?.lastNameField}
             register={register}
             required
@@ -43,6 +45,7 @@ export default function SignUpForm (props) {
         <TextField
           id="username"
           label="Username"
+          feedback={props.feedback?.username}
           css={props.css?.usernameField}
           register={register}
           required
@@ -50,12 +53,14 @@ export default function SignUpForm (props) {
       )}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required
       />
 
       <PasswordField
+        feedback={props.feedback?.password}
         css={props.css?.passwordfield}
         register={register}
         required

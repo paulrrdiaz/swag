@@ -9,14 +9,22 @@ const HeadingTwo = styled('h2')
 export default function SignInPage () {
   const [isLoading, setIsLoading] = React.useState(false)
   const [successMessage, setSuccessMessage] = React.useState()
-  const [data, setdata] = React.useState()
+  const [data, setData] = React.useState()
+  const [feedback, setFeedback] = React.useState()
 
   function signIn (input) {
+    console.info('Input', input)
+    setSuccessMessage()
+    setFeedback({})
     setIsLoading(true)
-    setdata(input)
+    setData(input)
     setTimeout(
       () => {
-        setSuccessMessage('You have successfully signed in!')
+        if (input.email?.includes('.')) {
+          setSuccessMessage('You have successfully signed in!')
+        } else {
+          setFeedback({ email: 'Please enter a valid email address' })
+        }
         setIsLoading(false)
       },
       3000
@@ -59,7 +67,11 @@ export default function SignInPage () {
         </Alert>
       )}
 
-      <SignInForm onSubmit={signIn} isLoading={isLoading} />
+      <SignInForm
+        onSubmit={signIn}
+        isLoading={isLoading}
+        feedback={feedback}
+      />
 
     </Page>
   )

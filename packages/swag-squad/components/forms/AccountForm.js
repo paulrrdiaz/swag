@@ -25,6 +25,7 @@ export default function AccountForm (props) {
           <TextField
             id="firstName"
             label="First name"
+            feedback={props.feedback?.firstName}
             css={props.css?.firstNameField}
             register={register}
             required
@@ -33,6 +34,7 @@ export default function AccountForm (props) {
           <TextField
             id="lastName"
             label="Last name"
+            feedback={props.feedback?.lastName}
             css={props.css?.lastNameField}
             register={register}
             required
@@ -45,6 +47,7 @@ export default function AccountForm (props) {
         <TextField
           id="username"
           label="Username"
+          feedback={props.feedback?.username}
           css={props.css?.usernameField}
           register={register}
           required
@@ -52,6 +55,7 @@ export default function AccountForm (props) {
       )}
 
       <EmailField
+        feedback={props.feedback?.email}
         css={props.css?.emailField}
         register={register}
         required
@@ -60,6 +64,7 @@ export default function AccountForm (props) {
       <PasswordField
         id="passwordConfirm"
         label="Confirm password"
+        feedback={props.feedback?.passwordConfirm}
         css={props.css?.passwordfield}
         register={register}
         autocomplete="current-password"
