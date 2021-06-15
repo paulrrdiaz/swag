@@ -15,6 +15,7 @@ export default function ChangePasswordForm (props) {
         label="Existing password"
         css={props.css?.passwordfield}
         register={register}
+        autocomplete="current-password"
         required
       />
 
@@ -23,6 +24,7 @@ export default function ChangePasswordForm (props) {
         label="New password"
         css={props.css?.newPasswordField}
         register={register}
+        autocomplete="new-password"
         required
       />
 

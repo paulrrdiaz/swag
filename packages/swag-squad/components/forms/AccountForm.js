@@ -58,9 +58,11 @@ export default function AccountForm (props) {
       />
 
       <PasswordField
+        id="passwordConfirm"
         label="Confirm password"
         css={props.css?.passwordfield}
         register={register}
+        autocomplete="current-password"
         required
       />
 
