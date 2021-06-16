@@ -19,7 +19,11 @@ export const toCol = header => ({
   disableFilters: true
 })
 
-export const toStandardCol = col => merge(toCol(col.id), col)
+export const toStandardCol = col => merge(
+  toCol(col.id),
+  { disableFilters: !col.Filter },
+  col
+)
 
 export default function Spreadsheet (props) {
   const [firstRow] = props.data || []
@@ -131,7 +135,9 @@ export default function Spreadsheet (props) {
                 >
                   <LoadingBar
                     isEnabled={props.isLoading}
-                    css={{ wrapper: { marginTop: '.5em', marginBottom: '.5em' } }}
+                    css={{
+                      wrapper: { marginTop: '.5em', marginBottom: '.5em' }
+                    }}
                   />
                 </StyledTableHeader>
               </tr>
