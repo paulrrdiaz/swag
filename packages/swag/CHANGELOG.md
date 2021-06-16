@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.9
+
+### Patch Changes
+
+- 45c810f: Adding textAlign left to alert
+
 ## 0.0.8
 
 ### Patch Changes
