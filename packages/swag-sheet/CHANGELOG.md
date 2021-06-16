@@ -1,5 +1,13 @@
 # @generates/swag-sheet
 
+## 0.0.9
+
+### Patch Changes
+
+- 1f0c241: Allowing columns to be customized by function
+- Updated dependencies [45c810f]
+  - @generates/swag@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
