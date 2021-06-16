@@ -14,14 +14,12 @@ const StyledTr = styled('tr')
 export const toCol = header => ({
   id: header,
   accessor: header,
+  Header: header,
   disableSortBy: true,
   disableFilters: true
 })
 
-export const toStandardCol = col => merge(
-  { id: col.id, accessor: col.id, disableSortBy: true, disableFilters: true },
-  col
-)
+export const toStandardCol = col => merge(toCol(col.id), col)
 
 export default function Spreadsheet (props) {
   const [firstRow] = props.data || []
@@ -86,7 +84,7 @@ export default function Spreadsheet (props) {
                         >
 
                           <div>
-                            {column.id}
+                            {column.render('Header')}
                           </div>
 
                           {column.canSort && (
