@@ -58,12 +58,7 @@ export default function Spreadsheet (props) {
     rows,
     prepareRow
   } = useTable(
-    {
-      columns,
-      data: memoizedData,
-      manualSortBy: true,
-      manualFilters: true
-    },
+    merge({ columns, data: memoizedData }, props.table?.options),
     useFilters,
     useSortBy
   )
