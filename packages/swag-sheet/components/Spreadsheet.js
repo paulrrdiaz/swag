@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import { useTable, useFilters, useSortBy } from 'react-table'
-import { StyledDiv } from '@generates/swag'
+import { StyledDiv, LoadingBar } from '@generates/swag'
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
 import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
@@ -116,6 +116,24 @@ export default function Spreadsheet (props) {
             })}
           </thead>
           <tbody {...getTableBodyProps()}>
+
+            {/* Loading Bar */}
+
+            {props.showLoading && (
+              <tr>
+                <StyledTableHeader
+                  as="td"
+                  colSpan={columns.length}
+                  css={{ backgroundColor: 'transparent' }}
+                >
+                  <LoadingBar
+                    isEnabled={props.isLoading}
+                    css={{ wrapper: { marginTop: '.5em', marginBottom: '.5em' } }}
+                  />
+                </StyledTableHeader>
+              </tr>
+            )}
+
             {rows.map((row, index) => {
               prepareRow(row)
               const { key, ...rest } = row.getRowProps()
