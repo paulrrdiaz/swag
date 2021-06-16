@@ -41,11 +41,14 @@ export default function Spreadsheet (props) {
   const memoizedData = React.useMemo(() => props.data, [props.data])
 
   function onCellUpdate (ctx, value) {
-    if (props.onCellUpdate) {
-      props.onCellUpdate({ ...ctx, setData: props.setData }, value)
-    } else {
-      props.data[ctx.cell.row.index][ctx.cell.column.id] = value
-      props.setData(props.data)
+    if (props.canEdit) {
+      if (props.onCellUpdate) {
+        props.onCellUpdate({ ...ctx, setData: props.setData }, value)
+      } else if (props.setData) {
+        props.setData(props.data)
+      } else {
+        props.data[ctx.cell.row.index][ctx.cell.column.id] = value
+      }
     }
   }
 
