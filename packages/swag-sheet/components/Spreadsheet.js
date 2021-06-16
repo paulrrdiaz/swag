@@ -11,19 +11,31 @@ import SpreadsheetCell from './SpreadsheetCell.js'
 const Wrapper = styled('div', { overflowX: 'scroll' })
 const StyledTr = styled('tr')
 
+export const toCol = header => ({
+  id: header,
+  accessor: header,
+  disableSortBy: true,
+  disableFilters: true
+})
+
+export const toStandardCol = col => merge(
+  { id: col.id, accessor: col.id, disableSortBy: true, disableFilters: true },
+  col
+)
+
 export default function Spreadsheet (props) {
   const [firstRow] = props.data || []
   const columns = React.useMemo(
-    () => props.columns.map(col => merge(
-      { disableSortBy: !col.canSort, disableFilters: !col.canFilter },
-      col
-    )) ||
-      Object.keys(firstRow || {}).map(header => ({
-        id: header,
-        accessor: header
-      })),
+    () => {
+      if (typeof props.columns === 'function') {
+        return props.columns(Object.keys(firstRow || {}).map(toCol))
+      } else if (props.columns) {
+        return props.columns.map(toStandardCol)
+      }
+      return Object.keys(firstRow || {}).map(toCol)
+    },
     [
-      props.columns,
+      props,
       firstRow
     ]
   )
