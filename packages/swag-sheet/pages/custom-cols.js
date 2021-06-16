@@ -3,7 +3,7 @@ import { css } from '@stitches/react'
 import { StyledContainer } from '@generates/swag'
 import Uploader from '../components/Uploader.js'
 
-export default function HomePage () {
+export default function CustomColsPage () {
   return (
     <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
 
@@ -15,6 +15,10 @@ export default function HomePage () {
         <Uploader
           onContinue={data => alert(JSON.stringify(data, undefined, 2))}
           onCellUpdate={(ctx, value) => alert(value)}
+          columns={columns => columns.map(col => ({
+            ...col,
+            disableSortBy: col.id !== 'Patient Sex'
+          }))}
         />
       </div>
 
