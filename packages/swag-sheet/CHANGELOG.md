@@ -1,5 +1,13 @@
 # @generates/swag-sheet
 
+## 0.0.10
+
+### Patch Changes
+
+- 16e668e: Fixing header rendering
+- 31b81be: Fixing onCellUpdate when canEdit falsy
+- 3558c08: Adding showLoading and isLoading to spreadsheet
+
 ## 0.0.9
 
 ### Patch Changes
