@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.13
+
+### Patch Changes
+
+- 96a1c81: Removing sort icon so it can be fully customized
+
 ## 0.0.12
 
 ### Patch Changes
