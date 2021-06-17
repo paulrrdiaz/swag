@@ -1,8 +1,7 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import { useTable, useFilters, useSortBy } from 'react-table'
-import { StyledDiv, LoadingBar } from '@generates/swag'
-import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
+import { LoadingBar } from '@generates/swag'
 import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
 import StyledTableHeader from './styled/StyledTableHeader.js'
@@ -86,34 +85,10 @@ export default function Spreadsheet (props) {
                         key={key}
                         css={props.css?.tableHeader}
                       >
-                        <StyledDiv
-                          css={{ display: 'flex', alignItems: 'center' }}
-                        >
 
-                          <div>
-                            {column.render('Header')}
-                          </div>
+                        {column.render('Header')}
 
-                          {column.canSort && (
-                            <StyledDiv css={{
-                              height: '1em',
-                              width: '1em',
-                              paddingLeft: '.5em'
-                            }}>
-                              {column.isSorted
-                                ? column.isSortedDesc
-                                  ? <HiChevronDown />
-                                  : <HiChevronUp />
-                                : ''
-                              }
-                            </StyledDiv>
-                          )}
-
-                        </StyledDiv>
-
-                        <div>
-                          {column.canFilter && column.render('Filter')}
-                        </div>
+                        {column.canFilter && column.render('Filter')}
 
                       </StyledTableHeader>
                     )
