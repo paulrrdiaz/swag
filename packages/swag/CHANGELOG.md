@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.10
+
+### Patch Changes
+
+- 8d838a9: Adding small input variant
+
 ## 0.0.9
 
 ### Patch Changes
