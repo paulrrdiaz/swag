@@ -19,7 +19,7 @@ export default function FieldsPage () {
         </div>
 
         <div>
-          This is
+          This is a TextField
         </div>
 
       </div>
@@ -31,7 +31,19 @@ export default function FieldsPage () {
         </div>
 
         <div>
-          This is
+          This is a PasswordField
+        </div>
+
+      </div>
+
+      <div className={css({ display: 'flex', alignItems: 'center', marginTop: '1em' })()}>
+
+        <div className={css({ marginRight: '1em' })()}>
+          <TextField id="name" small />
+        </div>
+
+        <div>
+          This is a small TextField
         </div>
 
       </div>

@@ -21,6 +21,20 @@ export default styled('input', {
   '&:focus': {
     outline: 'none',
     borderColor: '#3B82F6',
-    boxShadow: 'rgb(255, 255, 255) 0px 0px 0px 0px, #BFDBFE 0px 0px 0px 3px'
+    boxShadow: '#BFDBFE 0px 0px 0px 3px'
+  },
+  variants: {
+    small: {
+      true: {
+        fontSize: '.8em',
+        paddingTop: '.375em',
+        paddingBottom: '.375em',
+        paddingLeft: '.5em',
+        paddingRight: '.5em',
+        '&:focus': {
+          boxShadow: '#BFDBFE 0px 0px 0px 2px'
+        }
+      }
+    }
   }
 })

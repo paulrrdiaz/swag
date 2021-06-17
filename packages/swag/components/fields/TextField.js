@@ -11,7 +11,7 @@ export default function TextField (props) {
         borderColor: '#EF4444',
         '&:focus': {
           borderColor: '#EF4444',
-          boxShadow: 'rgb(255, 255, 255) 0px 0px 0px 0px, #FECACA 0px 0px 0px 3px'
+          boxShadow: '#FECACA 0px 0px 0px 3px'
         }
       }
     },
@@ -19,7 +19,7 @@ export default function TextField (props) {
   )
 
   return (
-    <div>
+    <StyledDiv css={props.css?.wrapper}>
 
       {typeof props.label === 'string'
         ? (
@@ -48,8 +48,9 @@ export default function TextField (props) {
         id={props.id}
         css={input}
         required={props.required}
+        small={props.small}
       />
 
-    </div>
+    </StyledDiv>
   )
 }
