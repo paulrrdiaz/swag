@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.11
+
+### Patch Changes
+
+- 004dab2: Setting disableFilters to false automatically when Filter is set
+
 ## 0.0.10
 
 ### Patch Changes
