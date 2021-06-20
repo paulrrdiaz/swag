@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.11
+
+### Patch Changes
+
+- 0d3ee87: Moving menu out of usermenu and into swag
+
 ## 0.0.10
 
 ### Patch Changes
