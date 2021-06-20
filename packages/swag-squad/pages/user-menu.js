@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, styled } from '@stitches/react'
-import { StyledDiv } from '@generates/swag'
+import { StyledDiv, StyledMenuItem } from '@generates/swag'
 import {
   HiOutlineUserCircle,
   HiOutlineAdjustments,
@@ -9,7 +9,6 @@ import {
 } from 'react-icons/hi'
 import Page from '../components/app/Page.js'
 import UserMenu from '../components/UserMenu.js'
-import StyledUserMenuItem from '../components/styled/StyledUserMenuItem.js'
 
 const HeadingTwo = styled('h2')
 const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })()
@@ -18,37 +17,37 @@ function Nav () {
   return (
     <StyledDiv css={{ display: 'grid' }}>
 
-      <StyledUserMenuItem>
+      <StyledMenuItem>
 
         <HiOutlineUserCircle className={navIcon} />
 
         My Profile
 
-      </StyledUserMenuItem>
+      </StyledMenuItem>
 
-      <StyledUserMenuItem>
+      <StyledMenuItem>
 
         <HiOutlineAdjustments className={navIcon} />
 
         Account Settings
 
-      </StyledUserMenuItem>
+      </StyledMenuItem>
 
-      <StyledUserMenuItem>
+      <StyledMenuItem>
 
         <HiOutlineSupport className={navIcon} />
 
         Support
 
-      </StyledUserMenuItem>
+      </StyledMenuItem>
 
-      <StyledUserMenuItem>
+      <StyledMenuItem>
 
         <HiOutlineLogout className={navIcon} />
 
         Sign Out
 
-      </StyledUserMenuItem>
+      </StyledMenuItem>
 
     </StyledDiv>
   )
