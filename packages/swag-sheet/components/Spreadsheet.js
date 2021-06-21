@@ -75,7 +75,7 @@ export default function Spreadsheet (props) {
             {headerGroups.map(headerGroup => {
               const { key, ...rest } = headerGroup.getHeaderGroupProps()
               return (
-                <tr {...rest} key={key}>
+                <StyledTr {...rest} key={key}>
                   {headerGroup.headers.map(column => {
                     const sortBy = column.getSortByToggleProps()
                     const { key, ...rest } = column.getHeaderProps(sortBy)
@@ -83,7 +83,10 @@ export default function Spreadsheet (props) {
                       <StyledTableHeader
                         {...rest}
                         key={key}
-                        css={props.css?.tableHeader}
+                        css={merge(
+                          { verticalAlign: 'top' },
+                          props.css?.tableHeader
+                        )}
                       >
 
                         {column.render('Header')}
@@ -93,7 +96,7 @@ export default function Spreadsheet (props) {
                       </StyledTableHeader>
                     )
                   })}
-                </tr>
+                </StyledTr>
               )
             })}
           </thead>
