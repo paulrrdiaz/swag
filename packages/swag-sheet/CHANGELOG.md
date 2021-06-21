@@ -1,5 +1,12 @@
 # @generates/swag-sheet
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies [888db05]
+  - @generates/swag@0.0.12
+
 ## 0.0.14
 
 ### Patch Changes

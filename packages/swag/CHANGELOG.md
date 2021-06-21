@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.12
+
+### Patch Changes
+
+- 888db05: Adding working switchfield component
+
 ## 0.0.11
 
 ### Patch Changes
