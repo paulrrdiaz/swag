@@ -1,5 +1,13 @@
 # @generates/swag-squad
 
+## 0.0.15
+
+### Patch Changes
+
+- 888db05: Enabling rememberMe on SignInForm component
+- Updated dependencies [888db05]
+  - @generates/swag@0.0.12
+
 ## 0.0.14
 
 ### Patch Changes
