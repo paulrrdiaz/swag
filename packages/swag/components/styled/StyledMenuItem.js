@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react'
-import { transition } from '@generates/swag'
+import transition from '../../styles/transition.js'
 
 export default styled(
   'a',

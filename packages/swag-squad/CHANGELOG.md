@@ -1,5 +1,13 @@
 # @generates/swag-squad
 
+## 0.0.14
+
+### Patch Changes
+
+- 0d3ee87: Moving menu out of usermenu and into swag
+- Updated dependencies [0d3ee87]
+  - @generates/swag@0.0.11
+
 ## 0.0.13
 
 ### Patch Changes
