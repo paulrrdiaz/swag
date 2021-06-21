@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react'
 import { usePopper } from 'react-popper'
 import Button from './buttons/Button.js'
-// import { transition } from '@generates/swag'
+import StyledDiv from './styled/StyledDiv.js'
 
 export default function Menu (props) {
   const [referenceElement, setReferenceElement] = React.useState()
@@ -46,7 +46,7 @@ export default function Menu (props) {
           <>
 
             <Popover.Button
-              as={Button}
+              as={props.trigger === 'string' ? Button : StyledDiv}
               ref={setReferenceElement}
               css={props.css?.button}
               {...props.button}

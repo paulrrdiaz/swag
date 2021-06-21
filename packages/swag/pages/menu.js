@@ -6,6 +6,7 @@ import {
 import Menu from '../components/Menu.js'
 import StyledContainer from '../components/styled/StyledContainer.js'
 import StyledMenuItem from '../components/styled/StyledMenuItem.js'
+import Button from '../components/buttons/Button.js'
 
 const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })()
 
@@ -26,7 +27,6 @@ export default function MenuPage () {
 
         <div className={css({ marginRight: '1em' })()}>
           <Menu trigger="Menu">
-
             <StyledMenuItem>
 
               <HiOutlineUserCircle className={navIcon} />
@@ -34,7 +34,6 @@ export default function MenuPage () {
               My Profile
 
             </StyledMenuItem>
-
           </Menu>
         </div>
 
@@ -52,11 +51,7 @@ export default function MenuPage () {
       })()}>
 
         <div className={css({ marginRight: '1em' })()}>
-          <Menu
-            trigger={<strong>Actions</strong>}
-            button={{ primary: true }}
-          >
-
+          <Menu trigger={<Button primary>Actions</Button>}>
             <StyledMenuItem>
 
               <HiOutlineUserCircle className={navIcon} />
@@ -64,7 +59,6 @@ export default function MenuPage () {
               My Profile
 
             </StyledMenuItem>
-
           </Menu>
         </div>
 
