@@ -45,8 +45,9 @@
   },
   "peerDependencies": {
     "@headlessui/react": "^1.2.0",
-    "@stitches/react": "^0.2.2",
     "@popperjs/core": "^2.9.2",
+    "@stitches/react": "^0.2.2",
+    "framer-motion": "^4.1.17",
     "react-icons": "^4.2.0",
     "react-popper": "^2.2.5"
   },
@@ -56,8 +57,9 @@
     "@changesets/cli": "^2.16.0",
     "@generates/modulizer": "^8.0.2",
     "@headlessui/react": "^1.2.0",
-    "@stitches/react": "^0.2.2",
     "@popperjs/core": "^2.9.2",
+    "@stitches/react": "^0.2.2",
+    "framer-motion": "^4.1.17",
     "next": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

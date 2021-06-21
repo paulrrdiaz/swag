@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
-  // SwitchField,
+  SwitchField,
   LoadingButton,
   StyledDiv,
   StyledLink
@@ -12,7 +12,8 @@ import StyledForm from '../styled/StyledForm.js'
 
 export default function SignInForm (props) {
   const {
-    // showRememberMe = true
+    rememberMe = true,
+    showRememberMe = true,
     forgotPasswordLinkProps = { href: '/forgot-password' },
     forgotPasswordLink = (
       <StyledLink {...forgotPasswordLinkProps}>
@@ -43,13 +44,13 @@ export default function SignInForm (props) {
 
       <StyledDiv css={{ display: 'flex', alignItems: 'center' }}>
 
-        {/* {showRememberMe && (
+        {showRememberMe && (
           <div>
-            <SwitchField>
+            <SwitchField value={rememberMe}>
               Remember me
             </SwitchField>
           </div>
-        )} */}
+        )}
 
         <StyledDiv css={{ marginLeft: 'auto' }}>
           {forgotPasswordLink}
@@ -58,7 +59,13 @@ export default function SignInForm (props) {
       </StyledDiv>
 
       <div>
-        <LoadingButton isLoading={props.isLoading} primary type="submit">
+        <LoadingButton
+          isLoading={props.isLoading}
+          primary
+          type="submit"
+          css={{ button: { marginTop: '.5em' } }}
+          {...props.button}
+        >
           Sign In
         </LoadingButton>
       </div>

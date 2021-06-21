@@ -1,77 +1,73 @@
 import React from 'react'
-import StyledSpan from '../styled/StyledSpan.js'
+import { merge } from '@generates/merger'
+import { motion } from 'framer-motion'
 import StyledDiv from '../styled/StyledDiv.js'
-import StyledButton from '../styled/StyledButton.js'
-import transition from '../../styles/transition.js'
 import StyledLabel from '../styled/StyledLabel.js'
 
-export default function SwitchField ({ id, children, ...props }) {
-  const [state, setState] = React.useState()
+export default function SwitchField (props) {
+  const {
+    value,
+    children,
+    transition = { type: 'spring', mass: 0.5 },
+    ...rest
+  } = props
+  const [isOn, setIsOn] = React.useState(value)
+
+  const body = merge(
+    {
+      display: 'flex',
+      flexShrink: 0,
+      cursor: 'pointer',
+      alignItems: 'center',
+      backgroundColor: '#E2E8F0',
+      height: '1.5em',
+      width: '2.5em',
+      paddingLeft: '.175em',
+      paddingRight: '.175em',
+      borderRadius: '1.5em'
+    },
+    props.css?.body
+  )
+
+  const button = merge(
+    {
+      height: '1.125em',
+      width: '1.125em',
+      backgroundColor: '#fff',
+      borderRadius: '100%'
+    },
+    props.css?.body
+  )
 
   return (
-    <div {...props}>
+    <StyledDiv
+      css={merge({ display: 'flex' }, props.css?.wrapper)}
+      onClick={() => setIsOn(!isOn)}
+      {...rest}
+    >
 
-      <StyledDiv css={{ display: 'flex' }}>
+      <motion.div
+        initial={false}
+        style={body}
+        animate={{ backgroundColor: isOn ? '#22C55E' : '#E2E8F0' }}
+      >
+        <motion.div
+          initial={false}
+          style={button}
+          animate={{ x: isOn ? 22.5 : 0 }}
+          transition={transition}
+        />
+      </motion.div>
 
-        <StyledButton
-          type="button"
-          aria-pressed="false"
-          onClick={() => setState(!state)}
-          // className={clsx(
-          //   switchOff,
-          //   'my-2 mr-4',
-          //   field.value ? 'bg-blue-600' : 'bg-gray-300'
-          // )}
-          css={{
-            marginRight: '1em',
-            // bg-gray-300 relative inline-flex flex-shrink-0 h-6 w-11 border-2
-            // border-transparent rounded-full cursor-pointer transition duration-300
-            // focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50
-            // focus:border-blue-600
-            backgroundColor: state ? '#22C55E' : '#D1D5DB',
-            position: 'relative',
-            display: 'inline-flex',
-            flexShrink: '0',
-            borderWidth: '2px',
-            borderColor: 'transparent',
-            borderRadius: '.5em',
-            cursor: 'pointer',
-            height: '1.25em',
-            width: '2.75em',
-            ...transition
-          }}
-        >
-          {/* <span className="sr-only">Use setting</span> */}
-          {/* <!-- Enabled: "", Not Enabled: "translate-x-0" --> */}
-          <StyledSpan
-            aria-hidden="true"
-            // className={clsx(
-            //   switchOn,
-            //   field.value ? 'translate-x-5' : 'translate-x-0'
-            // )}
-            // pointer-events-none inline-block h-5 w-5 rounded-full bg-white
-            // shadow transform ring-0 focus:border-blue-600 transition duration-300
-            css={{
-              transform: `translateX(${state ? '1.25em' : '0'}`,
-              display: 'inline-block',
-              backgroundColor: '#fff',
-              borderRadius: '.5em',
-              height: '1.25em',
-              width: '1.25em',
-              ...transition
-            }}
-          />
-        </StyledButton>
+      <StyledLabel
+        css={merge(
+          { marginLeft: '.75em', paddingBottom: 0, lineHeight: '1.625em' },
+          props.css?.label
+        )}
+      >
+        {children}
+      </StyledLabel>
 
-        <StyledLabel
-          onClick={() => setState(!state)}
-          // className={clsx(formLabel, error && 'text-red-500')}
-        >
-          {children}
-        </StyledLabel>
-
-      </StyledDiv>
-
-    </div>
+    </StyledDiv>
   )
 }
