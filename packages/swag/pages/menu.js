@@ -8,7 +8,11 @@ import StyledContainer from '../components/styled/StyledContainer.js'
 import StyledMenuItem from '../components/styled/StyledMenuItem.js'
 import Button from '../components/buttons/Button.js'
 
-const navIcon = css({ marginRight: '.5em', fontSize: '1.25em' })()
+const navIcon = css({
+  marginRight: '.5em',
+  fontSize: '1.25em',
+  flexShrink: 0
+})()
 
 export default function MenuPage () {
   return (

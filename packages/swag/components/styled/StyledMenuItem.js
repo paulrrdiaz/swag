@@ -1,9 +1,13 @@
 import { styled } from '@stitches/react'
+import Menu from '../../components/Menu.js'
 import transition from '../../styles/transition.js'
 
 export default styled(
-  'a',
+  Menu.Button,
   {
+    width: '100%',
+    borderWidth: 0,
+    backgroundColor: 'transparent',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
