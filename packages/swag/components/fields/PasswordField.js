@@ -1,4 +1,5 @@
 import React from 'react'
+import { merge } from '@generates/merger'
 import StyledLabel from '../styled/StyledLabel.js'
 import StyledInput from '../styled/StyledInput.js'
 import StyledFieldWrapper from '../styled/StyledFieldWrapper.js'
@@ -9,6 +10,19 @@ import StyledDiv from '../styled/StyledDiv.js'
 export default function PasswordField (props) {
   const { id = 'password', label = 'Password' } = props
   const [isVisible, setIsVisible] = React.useState(!!props.isVisible)
+  const input = merge(
+    {
+      paddingRight: '4em',
+      ...props.feedback && {
+        borderColor: '#DC2626',
+        '&:focus': {
+          borderColor: '#DC2626',
+          boxShadow: '#FECACA 0px 0px 0px 3px'
+        }
+      }
+    },
+    props.css?.input
+  )
 
   return (
     <div>
@@ -19,7 +33,7 @@ export default function PasswordField (props) {
 
       {props.feedback && (
         <StyledDiv css={{
-          color: '#EF4444',
+          color: '#DC2626',
           marginTop: '.5em',
           marginBottom: '.5em',
           fontSize: '.925em',
@@ -36,7 +50,7 @@ export default function PasswordField (props) {
           type={isVisible ? 'text' : 'password'}
           id={id}
           required={props.required}
-          css={{ paddingRight: '4em' }}
+          css={input}
         />
 
         <StyledButtonWrapper>

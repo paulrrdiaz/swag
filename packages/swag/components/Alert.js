@@ -20,11 +20,11 @@ export default function Alert (props) {
       borderColor: '#34D399'
     },
     ...props.level === 'error' && {
-      backgroundColor: '#FFE4E6',
-      color: '#BE123C',
+      backgroundColor: '#FEE2E2',
+      color: '#B91C1C',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: '#FB7185'
+      borderColor: '#F87171'
     },
     ...props.level === 'info' && {
       backgroundColor: '#DBEAFE',
@@ -70,7 +70,7 @@ export default function Alert (props) {
               ...props.level === 'error' && {
                 color: '#BE123C',
                 '&:hover': {
-                  backgroundColor: '#FECDD3'
+                  backgroundColor: '#FECACA'
                 }
               },
               ...props.level === 'info' && {

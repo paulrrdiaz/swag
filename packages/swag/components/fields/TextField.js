@@ -8,9 +8,9 @@ export default function TextField (props) {
   const input = merge(
     {
       ...props.feedback && {
-        borderColor: '#EF4444',
+        borderColor: '#DC2626',
         '&:focus': {
-          borderColor: '#EF4444',
+          borderColor: '#DC2626',
           boxShadow: '#FECACA 0px 0px 0px 3px'
         }
       }
@@ -32,7 +32,7 @@ export default function TextField (props) {
 
       {props.feedback && (
         <StyledDiv css={{
-          color: '#EF4444',
+          color: '#DC2626',
           marginTop: '.5em',
           marginBottom: '.5em',
           fontSize: '.925em',
