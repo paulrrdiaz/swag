@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.14
+
+### Patch Changes
+
+- c3b8d2c: Improving switchfield component styles
+
 ## 0.0.13
 
 ### Patch Changes
