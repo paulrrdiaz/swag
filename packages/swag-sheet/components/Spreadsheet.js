@@ -60,11 +60,44 @@ export default function Spreadsheet (props) {
     getTableBodyProps,
     headerGroups,
     rows,
-    prepareRow
+    prepareRow,
+    state: { pageIndex, pageSize, sortBy, filters }
   } = useTable(
     merge({ columns, data: memoizedData }, props.table?.options),
     useFilters,
     useSortBy
+  )
+
+  React.useEffect(
+    () => props.onPageIndex && props.onPageIndex(pageIndex),
+    [
+      props,
+      pageIndex
+    ]
+  )
+
+  React.useEffect(
+    () => props.onPageSize && props.onPageSize(pageSize),
+    [
+      props,
+      pageSize
+    ]
+  )
+
+  React.useEffect(
+    () => props.onSortBy && props.onSortBy(sortBy),
+    [
+      props,
+      sortBy
+    ]
+  )
+
+  React.useEffect(
+    () => props.onFilter && props.onFilter(filters),
+    [
+      props,
+      filters
+    ]
   )
 
   return (
