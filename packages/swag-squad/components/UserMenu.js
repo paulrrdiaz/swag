@@ -1,7 +1,6 @@
 import React from 'react'
 import { Menu } from '@generates/swag'
 import Avatar from './Avatar.js'
-import { merge } from '@generates/merger'
 
 export default function UserMenu (props) {
   return (
@@ -13,14 +12,7 @@ export default function UserMenu (props) {
           css={props.css?.avatar}
         />
       }
-      button={merge(
-        {
-          css: {
-            padding: '0'
-          }
-        },
-        props.button
-      )}
+      button={props.button}
       css={props.css?.menu}
     >
       {props.children}

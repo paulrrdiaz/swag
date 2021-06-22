@@ -45,7 +45,7 @@ export default function Menu (props) {
             <Popover.Button
               as={props.trigger === 'string' ? Button : StyledDiv}
               ref={setReferenceElement}
-              css={props.css?.button}
+              css={merge({ cursor: 'pointer' }, props.css?.button)}
               {...props.button}
             >
               {props.trigger}
