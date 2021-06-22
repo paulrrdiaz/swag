@@ -9,6 +9,7 @@ export default function SwitchField (props) {
     value,
     children,
     transition = { type: 'spring', mass: 0.5 },
+    css = {},
     ...rest
   } = props
   const [isOn, setIsOn] = React.useState(value)
@@ -20,28 +21,29 @@ export default function SwitchField (props) {
       cursor: 'pointer',
       alignItems: 'center',
       backgroundColor: '#E2E8F0',
-      height: '1.5em',
-      width: '2.5em',
-      paddingLeft: '.175em',
-      paddingRight: '.175em',
-      borderRadius: '1.5em'
+      height: '32px',
+      width: '48px',
+      paddingLeft: '4px',
+      paddingRight: '4px',
+      borderRadius: '32px'
     },
-    props.css?.body
+    css.body
   )
 
   const button = merge(
     {
-      height: '1.125em',
-      width: '1.125em',
+      height: '24px',
+      width: '24px',
       backgroundColor: '#fff',
-      borderRadius: '100%'
+      borderRadius: '100%',
+      boxShadow: '1px 2px 0 rgba(0,0,0,0.05)'
     },
-    props.css?.body
+    css.body
   )
 
   return (
     <StyledDiv
-      css={merge({ display: 'flex' }, props.css?.wrapper)}
+      css={merge({ display: 'flex' }, css.wrapper)}
       onClick={() => setIsOn(!isOn)}
       {...rest}
     >
@@ -54,15 +56,15 @@ export default function SwitchField (props) {
         <motion.div
           initial={false}
           style={button}
-          animate={{ x: isOn ? 22.5 : 0 }}
+          animate={{ x: isOn ? 24 : 0 }}
           transition={transition}
         />
       </motion.div>
 
       <StyledLabel
         css={merge(
-          { marginLeft: '.75em', paddingBottom: 0, lineHeight: '1.625em' },
-          props.css?.label
+          { marginLeft: '16px', paddingBottom: 0, lineHeight: '32px' },
+          css.label
         )}
       >
         {children}

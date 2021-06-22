@@ -52,7 +52,7 @@ export default function FieldsPage () {
       <div className={css({ display: 'flex', alignItems: 'center', marginTop: '1em' })()}>
 
         <div className={css({ marginRight: '1em', maxWidth: '10em' })()}>
-          <SwitchField id="editMode">
+          <SwitchField id="editMode" css={{ wrapper: { fontSize: '18px' } }}>
             Edit mode
           </SwitchField>
         </div>
