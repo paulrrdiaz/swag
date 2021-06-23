@@ -37,7 +37,27 @@ export default function CustomColsPage () {
       </div>
 
       <div>
-        <Spreadsheet data={data} showLoading={true} isLoading={isLoading} />
+        <Spreadsheet
+          columns={[
+            {
+              id: 'Driver Name',
+              disableSortBy: false
+            },
+            {
+              id: 'Plate Number',
+              disableSortBy: false
+            },
+            {
+              id: 'Make and Model',
+              disableSortBy: false
+            }
+          ]}
+          onSortBy={sortBy => console.log('Sort by', sortBy)}
+          onPageIndex={pageIndex => console.log('Page index', pageIndex)}
+          data={data}
+          showLoading={true}
+          isLoading={isLoading}
+        />
       </div>
 
     </StyledContainer>

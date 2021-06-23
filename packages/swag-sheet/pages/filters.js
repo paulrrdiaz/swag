@@ -23,6 +23,8 @@ export default function FiltersPage () {
               return <TextField id={col.id} small />
             }
           }))}
+          table={{ options: { manualFilters: true } }}
+          onFilter={filters => console.log('Filters', filters)}
         />
       </div>
 

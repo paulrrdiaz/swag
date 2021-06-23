@@ -69,7 +69,11 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(
-    () => props.onPageIndex && props.onPageIndex(pageIndex),
+    () => (
+      props.onPageIndex &&
+      pageIndex !== undefined &&
+      props.onPageIndex(pageIndex)
+    ),
     [
       props,
       pageIndex
@@ -77,7 +81,9 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(
-    () => props.onPageSize && props.onPageSize(pageSize),
+    () => (
+      props.onPageSize && pageSize !== undefined && props.onPageSize(pageSize)
+    ),
     [
       props,
       pageSize
@@ -85,7 +91,7 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(
-    () => props.onSortBy && props.onSortBy(sortBy),
+    () => props.onSortBy && sortBy.length && props.onSortBy(sortBy),
     [
       props,
       sortBy
@@ -93,7 +99,7 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(
-    () => props.onFilter && props.onFilter(filters),
+    () => props.onFilter && filters.length && props.onFilter(filters),
     [
       props,
       filters
