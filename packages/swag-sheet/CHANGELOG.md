@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.18
+
+### Patch Changes
+
+- c26eab1: Adding table state events
+
 ## 0.0.17
 
 ### Patch Changes
