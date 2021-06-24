@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from '@stitches/react'
-import { useTable, useFilters, useSortBy } from 'react-table'
+import { useTable, useFilters, useSortBy, usePagination } from 'react-table'
 import { LoadingBar } from '@generates/swag'
 import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
@@ -25,6 +25,7 @@ export const toStandardCol = col => merge(
 )
 
 export default function Spreadsheet (props) {
+  const initialRender = React.useRef(true)
   const [firstRow] = props.data || []
   const columns = React.useMemo(
     () => {
@@ -65,46 +66,45 @@ export default function Spreadsheet (props) {
   } = useTable(
     merge({ columns, data: memoizedData }, props.table?.options),
     useFilters,
-    useSortBy
+    useSortBy,
+    usePagination
   )
 
+  const { onPageIndex, onPageSize, onSortBy, onFilter } = props
+
   React.useEffect(
-    () => (
-      props.onPageIndex &&
-      pageIndex !== undefined &&
-      props.onPageIndex(pageIndex)
-    ),
+    () => onPageIndex && !initialRender.current && onPageIndex(pageIndex),
     [
-      props,
+      onPageIndex,
       pageIndex
     ]
   )
 
   React.useEffect(
-    () => (
-      props.onPageSize && pageSize !== undefined && props.onPageSize(pageSize)
-    ),
+    () => onPageSize && !initialRender.current && onPageSize(pageSize),
     [
-      props,
+      onPageSize,
       pageSize
     ]
   )
 
   React.useEffect(
-    () => props.onSortBy && sortBy.length && props.onSortBy(sortBy),
+    () => onSortBy && !initialRender.current && onSortBy(sortBy),
     [
-      props,
+      onSortBy,
       sortBy
     ]
   )
 
   React.useEffect(
-    () => props.onFilter && filters.length && props.onFilter(filters),
+    () => onFilter && !initialRender.current && onFilter(filters),
     [
-      props,
+      onFilter,
       filters
     ]
   )
+
+  React.useEffect(() => (initialRender.current = false), [])
 
   return (
     <Wrapper css={props.css?.wrapper}>

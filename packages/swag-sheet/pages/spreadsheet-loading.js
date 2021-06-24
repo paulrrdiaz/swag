@@ -23,6 +23,16 @@ const data = [
 
 export default function CustomColsPage () {
   const [isLoading, setIsLoading] = React.useState(false)
+
+  const onPageIndex= React.useCallback(
+    pageIndex => console.log('Page index', pageIndex),
+    []
+  )
+  const onSortBy = React.useCallback(
+    sortBy => console.log('Sort by', sortBy),
+    []
+  )
+
   return (
     <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
 
@@ -52,8 +62,8 @@ export default function CustomColsPage () {
               disableSortBy: false
             }
           ]}
-          onSortBy={sortBy => console.log('Sort by', sortBy)}
-          onPageIndex={pageIndex => console.log('Page index', pageIndex)}
+          onPageIndex={onPageIndex}
+          onSortBy={onSortBy}
           data={data}
           showLoading={true}
           isLoading={isLoading}
