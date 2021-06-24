@@ -24,7 +24,7 @@ const data = [
 export default function CustomColsPage () {
   const [isLoading, setIsLoading] = React.useState(false)
 
-  const onPageIndex= React.useCallback(
+  const onPageIndex = React.useCallback(
     pageIndex => console.log('Page index', pageIndex),
     []
   )
