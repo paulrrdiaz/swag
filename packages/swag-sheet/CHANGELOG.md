@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.19
+
+### Patch Changes
+
+- d3a1d91: Fixing spreadsheet event handlers
+
 ## 0.0.18
 
 ### Patch Changes
