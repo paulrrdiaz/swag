@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.15
+
+### Patch Changes
+
+- a4e7759: Adding feedbackId to fields
+
 ## 0.0.14
 
 ### Patch Changes

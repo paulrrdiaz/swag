@@ -1,5 +1,12 @@
 # @generates/swag-squad
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies [a4e7759]
+  - @generates/swag@0.0.15
+
 ## 0.0.17
 
 ### Patch Changes
