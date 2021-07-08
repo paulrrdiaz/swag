@@ -8,7 +8,11 @@ import Button from '../buttons/Button.js'
 import StyledDiv from '../styled/StyledDiv.js'
 
 export default function PasswordField (props) {
-  const { id = 'password', label = 'Password' } = props
+  const {
+    id = 'password',
+    label = 'Password',
+    feedbackId = `${props.id}-feedback`
+  } = props
   const [isVisible, setIsVisible] = React.useState(!!props.isVisible)
   const input = merge(
     {
@@ -32,13 +36,16 @@ export default function PasswordField (props) {
       </StyledLabel>
 
       {props.feedback && (
-        <StyledDiv css={{
-          color: '#DC2626',
-          marginTop: '.5em',
-          marginBottom: '.5em',
-          fontSize: '.925em',
-          fontWeight: '500'
-        }}>
+        <StyledDiv
+          id={feedbackId}
+          css={{
+            color: '#DC2626',
+            marginTop: '.5em',
+            marginBottom: '.5em',
+            fontSize: '.925em',
+            fontWeight: '500'
+          }}
+        >
           {props.feedback}
         </StyledDiv>
       )}

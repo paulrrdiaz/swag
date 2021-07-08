@@ -5,6 +5,8 @@ import StyledInput from '../styled/StyledInput.js'
 import StyledDiv from '../styled/StyledDiv.js'
 
 export default function TextField (props) {
+  const { feedbackId = `${props.id}-feedback` } = props
+
   const input = merge(
     {
       ...props.feedback && {
@@ -31,13 +33,16 @@ export default function TextField (props) {
       }
 
       {props.feedback && (
-        <StyledDiv css={{
-          color: '#DC2626',
-          marginTop: '.5em',
-          marginBottom: '.5em',
-          fontSize: '.925em',
-          fontWeight: '500'
-        }}>
+        <StyledDiv
+          id={feedbackId}
+          css={{
+            color: '#DC2626',
+            marginTop: '.5em',
+            marginBottom: '.5em',
+            fontSize: '.925em',
+            fontWeight: '500'
+          }}
+        >
           {props.feedback}
         </StyledDiv>
       )}
