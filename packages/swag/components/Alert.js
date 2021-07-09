@@ -10,28 +10,33 @@ export default function Alert (props) {
   const ref = React.useRef()
   const css = {
     display: 'flex',
-    padding: '.5em',
+    paddingTop: '.25em',
+    paddingBottom: '.25em',
+    paddingLeft: '.5em',
+    paddingRight: '.5em',
     borderRadius: '.375em',
+    fontSize: '1.125em',
+    lineHeight: '1.5em',
     ...props.level === 'success' && {
       backgroundColor: '#D1FAE5',
-      color: '#047857',
+      color: '#064E3B',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: '#34D399'
+      borderColor: '#10B981'
     },
     ...props.level === 'error' && {
       backgroundColor: '#FEE2E2',
-      color: '#B91C1C',
+      color: '#881337',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: '#F87171'
+      borderColor: '#F43F5E'
     },
     ...props.level === 'info' && {
       backgroundColor: '#DBEAFE',
-      color: '#1D4ED8',
+      color: '#1E3A8A',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: '#60A5FA'
+      borderColor: '#3B82F6'
     },
     ...props.css
   }
@@ -55,6 +60,7 @@ export default function Alert (props) {
             css={{
               display: 'inline-flex',
               padding: '.25em',
+              marginTop: '.2em',
               fontSize: '1.25em',
               textAlign: 'left',
               borderRadius: '.375em',
@@ -62,19 +68,19 @@ export default function Alert (props) {
               border: 'none',
               cursor: 'pointer',
               ...props.level === 'success' && {
-                color: '#047857',
+                color: '#064E3B',
                 '&:hover': {
                   backgroundColor: '#A7F3D0'
                 }
               },
               ...props.level === 'error' && {
-                color: '#BE123C',
+                color: '#9F1239',
                 '&:hover': {
                   backgroundColor: '#FECACA'
                 }
               },
               ...props.level === 'info' && {
-                color: '#1D4ED8',
+                color: '#1E40AF',
                 '&:hover': {
                   backgroundColor: '#BFDBFE'
                 }
