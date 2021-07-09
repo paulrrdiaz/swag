@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.16
+
+### Patch Changes
+
+- efe830f: Updating alert colors
+
 ## 0.0.15
 
 ### Patch Changes
