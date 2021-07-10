@@ -3,6 +3,7 @@ import { css } from '@stitches/react'
 import TextField from '../components/fields/TextField.js'
 import StyledContainer from '../components/styled/StyledContainer.js'
 import PasswordField from '../components/fields/Passwordfield.js'
+import EmailField from '../components/fields/EmailField.js'
 import SwitchField from '../components/fields/SwitchField.js'
 
 export default function FieldsPage () {
@@ -21,6 +22,18 @@ export default function FieldsPage () {
 
         <div>
           This is a TextField
+        </div>
+
+      </div>
+
+      <div className={css({ display: 'flex', alignItems: 'center', marginTop: '1em' })()}>
+
+        <div className={css({ marginRight: '1em' })()}>
+          <EmailField feedback="Please enter a valid email" />
+        </div>
+
+        <div>
+          This is a EmailField
         </div>
 
       </div>
