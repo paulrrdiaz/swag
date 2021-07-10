@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.17
+
+### Patch Changes
+
+- f5994b3: Changing Alert and feedback colors
+
 ## 0.0.16
 
 ### Patch Changes
