@@ -1,3 +1,4 @@
+import React from 'react'
 import StyledDiv from './styled/StyledDiv.js'
 
 export default function Feedback (props) {
