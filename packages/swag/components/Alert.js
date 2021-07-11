@@ -47,7 +47,7 @@ export default function Alert (props) {
   )
 
   return (
-    <StyledDiv css={css} ref={ref}>
+    <StyledDiv css={css} ref={ref} data-alert={props.level}>
 
       <StyledDiv css={{ padding: '.5em' }}>
         {props.children}
