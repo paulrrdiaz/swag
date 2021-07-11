@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.19
+
+### Patch Changes
+
+- f480759: Add data-alert prop to Alert
+
 ## 0.0.18
 
 ### Patch Changes
