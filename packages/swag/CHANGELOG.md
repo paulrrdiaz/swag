@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.22
+
+### Patch Changes
+
+- 81bae45: Removing ultra caches
+
 ## 0.0.21
 
 ### Patch Changes
