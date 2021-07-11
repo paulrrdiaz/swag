@@ -18,9 +18,9 @@ export default function PasswordField (props) {
     {
       paddingRight: '4em',
       ...props.feedback && {
-        borderColor: '#DC2626',
+        borderColor: '#EF4444',
         '&:focus': {
-          borderColor: '#DC2626',
+          borderColor: '#EF4444',
           boxShadow: '#FECACA 0px 0px 0px 3px'
         }
       }

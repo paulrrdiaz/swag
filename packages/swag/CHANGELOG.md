@@ -1,5 +1,29 @@
 # @generates/swag
 
+## 0.0.19
+
+### Patch Changes
+
+- f480759: Add data-alert prop to Alert
+
+## 0.0.18
+
+### Patch Changes
+
+- 0e93644: Forgot to update password error colors
+
+## 0.0.17
+
+### Patch Changes
+
+- f5994b3: Changing Alert and feedback colors
+
+## 0.0.16
+
+### Patch Changes
+
+- efe830f: Updating alert colors
+
 ## 0.0.15
 
 ### Patch Changes
