@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.21
+
+### Patch Changes
+
+- cd92293: Fixing missing react import
+
 ## 0.0.20
 
 ### Patch Changes
