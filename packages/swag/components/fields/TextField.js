@@ -42,7 +42,7 @@ export default function TextField (props) {
         css={input}
         required={props.required}
         small={props.small}
-        error={props.feedback}
+        level={props.feedback && 'error'}
       />
 
     </StyledDiv>
