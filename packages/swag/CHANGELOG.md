@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.18
+
+### Patch Changes
+
+- 0e93644: Forgot to update password error colors
+
 ## 0.0.17
 
 ### Patch Changes
