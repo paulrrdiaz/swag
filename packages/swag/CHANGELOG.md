@@ -1,5 +1,12 @@
 # @generates/swag
 
+## 0.0.20
+
+### Patch Changes
+
+- 8a53647: Modifiying password field show hide button
+- 8a53647: Adding feedback component
+
 ## 0.0.19
 
 ### Patch Changes
