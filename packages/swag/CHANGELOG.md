@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.23
+
+### Patch Changes
+
+- 8c93074: Fixing TextField props
+
 ## 0.0.22
 
 ### Patch Changes

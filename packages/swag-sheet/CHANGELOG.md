@@ -1,5 +1,14 @@
 # @generates/swag-sheet
 
+## 0.0.28
+
+### Patch Changes
+
+- b364484: Fixing header filter sort issue
+- 8c93074: Fixing TextField props
+- Updated dependencies [8c93074]
+  - @generates/swag@0.0.23
+
 ## 0.0.27
 
 ### Patch Changes
