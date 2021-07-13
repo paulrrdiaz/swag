@@ -120,7 +120,6 @@ export default function Spreadsheet (props) {
                     const { key, ...rest } = column.getHeaderProps(sortBy)
                     return (
                       <StyledTableHeader
-                        {...rest}
                         key={key}
                         css={merge(
                           { verticalAlign: 'top' },
@@ -128,7 +127,9 @@ export default function Spreadsheet (props) {
                         )}
                       >
 
-                        {column.render('Header')}
+                        <div {...rest}>
+                          {column.render('Header')}
+                        </div>
 
                         {column.canFilter && column.render('Filter')}
 
