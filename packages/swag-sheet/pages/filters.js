@@ -19,11 +19,17 @@ export default function FiltersPage () {
             ...col,
             disableSortBy: false,
             disableFilters: false,
-            Filter: function Filter () {
-              return <TextField id={col.id} small />
+            Filter: function Filter ({ column, gotoPage }) {
+              return <TextField
+                id={col.id}
+                small
+                onChange={evt => {
+                  // Set to undefined to remove the filter entirely.
+                  column.setFilter(evt.target.value || undefined)
+                }}
+              />
             }
           }))}
-          table={{ options: { manualFilters: true } }}
           onFilter={filters => console.log('Filters', filters)}
         />
       </div>
