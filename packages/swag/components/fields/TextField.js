@@ -3,6 +3,7 @@ import { merge } from '@generates/merger'
 import StyledLabel from '../styled/StyledLabel.js'
 import StyledInput from '../styled/StyledInput.js'
 import StyledDiv from '../styled/StyledDiv.js'
+import Feedback from '../Feedback.js'
 
 export default function TextField (props) {
   const { feedbackId = `${props.id}-feedback` } = props
@@ -32,20 +33,7 @@ export default function TextField (props) {
         : props.label
       }
 
-      {props.feedback && (
-        <StyledDiv
-          id={feedbackId}
-          css={{
-            color: '#EF4444',
-            marginTop: '.5em',
-            marginBottom: '.5em',
-            fontSize: '.925em',
-            fontWeight: '500'
-          }}
-        >
-          {props.feedback}
-        </StyledDiv>
-      )}
+      {props.feedback && <Feedback id={feedbackId} feedback={props.feedback} />}
 
       <StyledInput
         {...props.register && props.register(props.id, props.required)}
@@ -54,6 +42,7 @@ export default function TextField (props) {
         css={input}
         required={props.required}
         small={props.small}
+        level={props.feedback && 'error'}
       />
 
     </StyledDiv>

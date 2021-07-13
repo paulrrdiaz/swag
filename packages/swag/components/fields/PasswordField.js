@@ -5,7 +5,7 @@ import StyledInput from '../styled/StyledInput.js'
 import StyledFieldWrapper from '../styled/StyledFieldWrapper.js'
 import StyledButtonWrapper from '../styled/StyledButtonWrapper.js'
 import Button from '../buttons/Button.js'
-import StyledDiv from '../styled/StyledDiv.js'
+import Feedback from '../Feedback.js'
 
 export default function PasswordField (props) {
   const {
@@ -35,20 +35,7 @@ export default function PasswordField (props) {
         {label}
       </StyledLabel>
 
-      {props.feedback && (
-        <StyledDiv
-          id={feedbackId}
-          css={{
-            color: '#DC2626',
-            marginTop: '.5em',
-            marginBottom: '.5em',
-            fontSize: '.925em',
-            fontWeight: '500'
-          }}
-        >
-          {props.feedback}
-        </StyledDiv>
-      )}
+      {props.feedback && <Feedback id={feedbackId} feedback={props.feedback} />}
 
       <StyledFieldWrapper>
 
@@ -58,6 +45,7 @@ export default function PasswordField (props) {
           id={id}
           required={props.required}
           css={input}
+          level={props.feedback && 'error'}
         />
 
         <StyledButtonWrapper>
@@ -67,6 +55,7 @@ export default function PasswordField (props) {
               evt.preventDefault()
               setIsVisible(!isVisible)
             }}
+            primary={isVisible}
           >
             {isVisible ? 'Hide' : 'Show'}
           </Button>

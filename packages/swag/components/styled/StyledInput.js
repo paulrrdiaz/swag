@@ -35,6 +35,11 @@ export default styled('input', {
           boxShadow: '#BFDBFE 0px 0px 0px 2px'
         }
       }
+    },
+    level: {
+      error: {
+        color: '#DC2626'
+      }
     }
   }
 })

@@ -91,6 +91,15 @@ export default styled(
             boxShadow: '#94A3B8 0px 0px 0px 1px'
           }
         }
+      },
+      {
+        small: true,
+        primary: true,
+        css: {
+          '&:focus': {
+            boxShadow: '#BFDBFE 0px 0px 0px 1px'
+          }
+        }
       }
     ],
     defaultVariants: {

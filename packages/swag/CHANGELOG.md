@@ -1,5 +1,30 @@
 # @generates/swag
 
+## 0.0.22
+
+### Patch Changes
+
+- 81bae45: Removing ultra caches
+
+## 0.0.21
+
+### Patch Changes
+
+- cd92293: Fixing missing react import
+
+## 0.0.20
+
+### Patch Changes
+
+- 8a53647: Modifiying password field show hide button
+- 8a53647: Adding feedback component
+
+## 0.0.19
+
+### Patch Changes
+
+- f480759: Add data-alert prop to Alert
+
 ## 0.0.18
 
 ### Patch Changes
