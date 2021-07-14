@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.29
+
+### Patch Changes
+
+- 9e5bca5: Re-render the table if the table options (e.g. initialState) change.
+
 ## 0.0.28
 
 ### Patch Changes
