@@ -41,7 +41,6 @@ export default function Spreadsheet (props) {
       firstRow
     ]
   )
-  const [options, setOptions] = React.useState(props.table?.options)
   const memoizedData = React.useMemo(() => props.data, [props.data])
 
   function onCellUpdate (ctx, value) {
@@ -64,7 +63,14 @@ export default function Spreadsheet (props) {
     prepareRow,
     state: { pageIndex, pageSize, sortBy, filters }
   } = useTable(
-    merge({ columns, data: memoizedData }, options),
+    merge(
+      {
+        columns,
+        data: memoizedData,
+        initialState: props.initialState
+      },
+      props.options
+    ),
     useFilters,
     useSortBy,
     usePagination
@@ -105,9 +111,6 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(() => (initialRender.current = false), [])
-
-  // Re-render the table if the table options (e.g. initialState) change.
-  React.useEffect(() => setOptions(props.table.options), [props.table?.options])
 
   return (
     <Wrapper css={props.css?.wrapper}>
