@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.30
+
+### Patch Changes
+
+- c39a451: Cleanup filter logic
+
 ## 0.0.29
 
 ### Patch Changes
