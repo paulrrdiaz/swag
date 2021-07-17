@@ -41,7 +41,7 @@ export default function FiltersPage () {
     filters,
     setFilters
   ] = useQueryParams('filter', [], f => f?.map(toFilter))
-  const initialState = React.useRef()
+  const [initialState, setInitialState] = React.useState()
 
   const onPageIndex = React.useCallback(
     pageIndex => console.log('Page index', pageIndex),
@@ -66,7 +66,7 @@ export default function FiltersPage () {
   //
   React.useEffect(
     () => {
-      if (!initialState.current) initialState.current = { filters }
+      if (renderRef.current === 1) setInitialState({ filters })
     },
     [filters]
   )
@@ -84,10 +84,22 @@ export default function FiltersPage () {
         <Button primary onClick={updateData}>
           Update Data
         </Button>
+
+        <Button
+          secondary
+          css={{ marginLeft: '1em' }}
+          onClick={() => {
+            setFilters([])
+            setInitialState({ filters: [] })
+          }}
+        >
+          Clear Filters
+        </Button>
+
       </div>
 
       <div>
-        {initialState.current && <Spreadsheet
+        <Spreadsheet
           columns={columns => columns.map(col => ({
             ...col,
             disableSortBy: false,
@@ -107,16 +119,16 @@ export default function FiltersPage () {
           onPageIndex={onPageIndex}
           onSortBy={onSortBy}
           data={data}
-          initialState={initialState.current}
+          initialState={initialState}
+          filters={filters}
           showLoading={true}
           isLoading={isLoading}
           onFilter={filters => {
             if (renderRef.current > 0) {
-              initialState.current = { filters }
               setFilters(filters.map(toFilterString), { update: false })
             }
           }}
-        />}
+        />
       </div>
 
     </StyledContainer>

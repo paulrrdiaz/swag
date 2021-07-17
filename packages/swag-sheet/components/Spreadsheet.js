@@ -61,6 +61,7 @@ export default function Spreadsheet (props) {
     headerGroups,
     rows,
     prepareRow,
+    setAllFilters,
     state: { pageIndex, pageSize, sortBy, filters }
   } = useTable(
     merge(
@@ -111,6 +112,14 @@ export default function Spreadsheet (props) {
   )
 
   React.useEffect(() => (initialRender.current = false), [])
+
+  React.useEffect(
+    () => setAllFilters(props.filters),
+    [
+      setAllFilters,
+      props.filters
+    ]
+  )
 
   return (
     <Wrapper css={props.css?.wrapper}>
