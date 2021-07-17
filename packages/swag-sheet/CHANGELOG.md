@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.31
+
+### Patch Changes
+
+- c99e8ff: Adding setAllFilters logic
+
 ## 0.0.30
 
 ### Patch Changes
