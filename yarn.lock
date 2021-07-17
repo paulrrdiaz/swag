@@ -1435,10 +1435,10 @@
     rollup "^2.39.0"
     rollup-plugin-terser "^7.0.0"
 
-"@generates/use-query-params@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@generates/use-query-params/-/use-query-params-1.0.8.tgz#73aebc1a40d2c232292ff8079b2a159207629bd7"
-  integrity sha512-6hY4FCX0bbCkRhaIgu7cZE5J7KyDdO1F5d8zwPtsWlx7Y8kyB+0g6sFJEvXrAXessEWyf2IvROHIkCaoM3QCGg==
+"@generates/use-query-params@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@generates/use-query-params/-/use-query-params-1.0.9.tgz#43679dec96664162e134b87676fef473a5bf93e7"
+  integrity sha512-/dgjv87hRL0YxEV1UkIh1fJAsb6h9JXlCTIlDD3b8osjhOmsyxi7bIxSSi3lpx0JA6WRbJAR5Vo6ph/giz31xA==
 
 "@hapi/accept@5.0.2":
   version "5.0.2"

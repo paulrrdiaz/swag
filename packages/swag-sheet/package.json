@@ -59,7 +59,7 @@
     "@babel/preset-react": "^7.14.5",
     "@changesets/cli": "^2.16.0",
     "@generates/modulizer": "^8.0.2",
-    "@generates/use-query-params": "^1.0.8",
+    "@generates/use-query-params": "^1.0.9",
     "@stitches/react": "^0.2.2",
     "fakerator": "^0.3.3",
     "next": "^11.0.1",
