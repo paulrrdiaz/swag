@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table'
-import { LoadingBar } from '@generates/swag'
+import { LoadingBar, Button } from '@generates/swag'
 import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
 import StyledTableHeader from './styled/StyledTableHeader.js'
@@ -26,7 +26,8 @@ export const toStandardCol = col => merge(
 
 export default function Spreadsheet (props) {
   const initialRender = React.useRef(true)
-  const [firstRow] = props.data || []
+  const [data, setData] = React.useState(props.data || [])
+  const [firstRow] = data
   const columns = React.useMemo(
     () => {
       if (typeof props.columns === 'function') {
@@ -41,18 +42,22 @@ export default function Spreadsheet (props) {
       firstRow
     ]
   )
-  const memoizedData = React.useMemo(() => props.data, [props.data])
+  const memoizedData = React.useMemo(() => data, [data])
 
   function onCellUpdate (ctx, value) {
     if (props.canEdit) {
       if (props.onCellUpdate) {
         props.onCellUpdate({ ...ctx, setData: props.setData }, value)
       } else if (props.setData) {
-        props.setData(props.data)
+        props.setData(data)
       } else {
         props.data[ctx.cell.row.index][ctx.cell.column.id] = value
       }
     }
+  }
+
+  function addRow () {
+    setData(data.concat({ 'Driver Name': 'Test' }))
   }
 
   const {
@@ -176,6 +181,8 @@ export default function Spreadsheet (props) {
               </tr>
             )}
 
+            {/* Data rows */}
+
             {rows.map((row, index) => {
               prepareRow(row)
               const { key, ...rest } = row.getRowProps()
@@ -206,6 +213,23 @@ export default function Spreadsheet (props) {
                 </StyledTr>
               )
             })}
+
+            {/* Action buttons */}
+
+            {props.onAdd && (
+              <tr>
+                <StyledTableHeader
+                  as="td"
+                  colSpan={columns.length}
+                  css={{ backgroundColor: 'transparent' }}
+                >
+                  <Button primary small onClick={addRow}>
+                    Add
+                  </Button>
+                </StyledTableHeader>
+              </tr>
+            )}
+
           </tbody>
         </StyledTable>
       )}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@stitches/react'
-import { StyledContainer, Button } from '@generates/swag'
+import { StyledContainer } from '@generates/swag'
 import Spreadsheet from '../components/Spreadsheet.js'
 
 const data = [
@@ -50,12 +50,6 @@ export default function AddPage () {
       <h1>
         swag-sheet
       </h1>
-
-      <div className={css('div', { marginTop: '2em' })()}>
-        <Button primary onClick={() => setIsLoading(!isLoading)}>
-          Toggle Enabled
-        </Button>
-      </div>
 
       <div>
         <Spreadsheet
