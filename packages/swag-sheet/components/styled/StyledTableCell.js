@@ -5,7 +5,7 @@ export default styled(
   {
     boxSizing: 'border-box',
     verticalAlign: 'top',
-    padding: '6px',
+    padding: '8px',
     height: '100%',
     minHeight: '35px',
     minWidth: '72px',

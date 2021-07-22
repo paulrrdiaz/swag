@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@stitches/react'
-import { StyledContainer, Button } from '@generates/swag'
+import { StyledContainer, SwitchField } from '@generates/swag'
 import Spreadsheet from '../components/Spreadsheet.js'
 
 const data = [
@@ -21,7 +21,7 @@ const data = [
   }
 ]
 
-export default function CustomColsPage () {
+export default function LoadingPage () {
   const [isLoading, setIsLoading] = React.useState(false)
 
   const onPageIndex = React.useCallback(
@@ -41,9 +41,9 @@ export default function CustomColsPage () {
       </h1>
 
       <div className={css('div', { marginTop: '2em' })()}>
-        <Button primary onClick={() => setIsLoading(!isLoading)}>
-          Toggle Enabled
-        </Button>
+        <SwitchField onChange={isOn => setIsLoading(isOn)}>
+          Loading
+        </SwitchField>
       </div>
 
       <div>

@@ -3,7 +3,7 @@ import { styled } from '@stitches/react'
 export default styled(
   'th',
   {
-    padding: '6px',
+    padding: '8px',
     minHeight: '35px',
     minWidth: '72px',
     backgroundColor: '#F3F4F6',
