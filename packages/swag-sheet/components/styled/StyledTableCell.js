@@ -13,11 +13,13 @@ export default styled(
     borderStyle: 'solid',
     borderWidth: '1px',
     borderColor: '#E5E7EB',
+    cursor: 'cell',
     '&:focus': {
       outline: 'none',
       borderWidth: '2px',
       padding: '5px',
-      borderColor: '#3B82F6'
+      borderColor: '#3B82F6',
+      cursor: 'auto'
     }
   }
 )

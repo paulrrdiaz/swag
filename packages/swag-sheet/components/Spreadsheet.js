@@ -28,6 +28,7 @@ export default function Spreadsheet (props) {
   const initialRender = React.useRef(true)
   const [data, setData] = React.useState(props.data || [])
   const [firstRow] = data
+  const firstColKey = firstRow && Object.keys(firstRow)[0]
   const columns = React.useMemo(
     () => {
       if (typeof props.columns === 'function') {
@@ -43,6 +44,7 @@ export default function Spreadsheet (props) {
     ]
   )
   const memoizedData = React.useMemo(() => data, [data])
+  const [focusedCell, setFocusedCell] = React.useState({})
 
   function onCellUpdate (ctx, value) {
     if (props.canEdit) {
@@ -57,7 +59,9 @@ export default function Spreadsheet (props) {
   }
 
   function addRow () {
-    setData(data.concat({ 'Driver Name': 'Test' }))
+    const updated = data.concat({})
+    setData(updated)
+    setFocusedCell({ rowId: `row_${updated.length - 1}`, colId: firstColKey })
   }
 
   const {
@@ -206,6 +210,10 @@ export default function Spreadsheet (props) {
                         onCellUpdate={onCellUpdate}
                         canEdit={props.canEdit}
                         rowId={rowId}
+                        isEditing={
+                          focusedCell.rowId === rowId &&
+                          focusedCell.colId === cell.column.id
+                        }
                         {...rest}
                       />
                     )

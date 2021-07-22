@@ -5,8 +5,9 @@ export default function SpreadsheetCell (props) {
   const { canEdit = true } = props
   const [value, setValue] = React.useState(props.cell.value)
   const [css, setCss] = React.useState(props.css)
-  const [isEditing, setIsEditing] = React.useState(false)
+  const [isEditing, setIsEditing] = React.useState(props.isEditing)
   const ctx = { ...props, setCss }
+  const ref = React.useRef()
 
   // Update the value if it's updated externally after render.
   React.useEffect(
@@ -20,8 +21,14 @@ export default function SpreadsheetCell (props) {
     ]
   )
 
+  React.useEffect(
+    () => props.isEditing && ref.current.focus(),
+    [props.isEditing]
+  )
+
   return (
     <StyledTableCell
+      ref={ref}
       data-col={props.cell.column.id}
       data-id={`${props.rowId}.${props.cell.column.id}`}
       onClick={() => canEdit && setIsEditing(true)}
