@@ -114,7 +114,7 @@ export default function Spreadsheet (props) {
   React.useEffect(() => (initialRender.current = false), [])
 
   React.useEffect(
-    () => setAllFilters(props.filters),
+    () => props.filters && setAllFilters(props.filters),
     [
       setAllFilters,
       props.filters
