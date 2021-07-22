@@ -16,9 +16,7 @@ export default styled(
     cursor: 'cell',
     '&:focus': {
       outline: 'none',
-      borderWidth: '2px',
-      padding: '5px',
-      borderColor: '#3B82F6',
+      boxShadow: 'inset 0 0 0 1px #2563EB, inset 0 0 2px 2px #93C5FD',
       cursor: 'auto'
     }
   }
