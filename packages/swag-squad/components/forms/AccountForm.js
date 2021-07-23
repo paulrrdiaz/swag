@@ -68,7 +68,6 @@ export default function AccountForm (props) {
         css={props.css?.passwordfield}
         register={register}
         autocomplete="current-password"
-        required
       />
 
       <div>
