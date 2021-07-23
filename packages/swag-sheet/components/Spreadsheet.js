@@ -41,7 +41,6 @@ export default function Spreadsheet (props) {
       firstRow
     ]
   )
-
   const memoizedData = React.useMemo(() => props.data, [props.data])
 
   function onCellUpdate (ctx, value) {
@@ -62,9 +61,17 @@ export default function Spreadsheet (props) {
     headerGroups,
     rows,
     prepareRow,
+    setAllFilters,
     state: { pageIndex, pageSize, sortBy, filters }
   } = useTable(
-    merge({ columns, data: memoizedData }, props.table?.options),
+    merge(
+      {
+        columns,
+        data: memoizedData,
+        initialState: props.initialState
+      },
+      props.options
+    ),
     useFilters,
     useSortBy,
     usePagination
@@ -106,6 +113,14 @@ export default function Spreadsheet (props) {
 
   React.useEffect(() => (initialRender.current = false), [])
 
+  React.useEffect(
+    () => props.filters && setAllFilters(props.filters),
+    [
+      setAllFilters,
+      props.filters
+    ]
+  )
+
   return (
     <Wrapper css={props.css?.wrapper}>
       {props.data && (
@@ -120,7 +135,6 @@ export default function Spreadsheet (props) {
                     const { key, ...rest } = column.getHeaderProps(sortBy)
                     return (
                       <StyledTableHeader
-                        {...rest}
                         key={key}
                         css={merge(
                           { verticalAlign: 'top' },
@@ -128,7 +142,9 @@ export default function Spreadsheet (props) {
                         )}
                       >
 
-                        {column.render('Header')}
+                        <div {...rest}>
+                          {column.render('Header')}
+                        </div>
 
                         {column.canFilter && column.render('Filter')}
 

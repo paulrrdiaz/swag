@@ -6,11 +6,18 @@ import StyledDiv from '../styled/StyledDiv.js'
 import Feedback from '../Feedback.js'
 
 export default function TextField (props) {
-  const { feedbackId = `${props.id}-feedback` } = props
+  const {
+    label,
+    css,
+    feedback,
+    feedbackId = `${props.id}-feedback`,
+    register,
+    ...rest
+  } = props
 
   const input = merge(
     {
-      ...props.feedback && {
+      ...feedback && {
         borderColor: '#EF4444',
         '&:focus': {
           borderColor: '#EF4444',
@@ -18,29 +25,28 @@ export default function TextField (props) {
         }
       }
     },
-    props.css?.input
+    css?.input
   )
 
   return (
-    <StyledDiv css={props.css?.wrapper}>
+    <StyledDiv css={css?.wrapper}>
 
-      {typeof props.label === 'string'
+      {typeof label === 'string'
         ? (
-            <StyledLabel htmlFor={props.id} css={props.css?.label}>
-              {props.label}
+            <StyledLabel htmlFor={props.id} css={css?.label}>
+              {label}
             </StyledLabel>
           )
-        : props.label
+        : label
       }
 
-      {props.feedback && <Feedback id={feedbackId} feedback={props.feedback} />}
+      {feedback && <Feedback id={feedbackId} feedback={feedback} />}
 
       <StyledInput
-        {...props.register && props.register(props.id, props.required)}
+        {...rest}
+        {...register && register(props.id, props.required)}
         type={props.type || 'text'}
-        id={props.id}
         css={input}
-        required={props.required}
         small={props.small}
         level={props.feedback && 'error'}
       />

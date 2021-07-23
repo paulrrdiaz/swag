@@ -1,5 +1,46 @@
 # @generates/swag-sheet
 
+## 0.0.32
+
+### Patch Changes
+
+- Updated dependencies [a4b6c1b]
+  - @generates/swag@0.0.24
+
+## 0.0.31
+
+### Patch Changes
+
+- c99e8ff: Adding setAllFilters logic
+
+## 0.0.30
+
+### Patch Changes
+
+- c39a451: Cleanup filter logic
+
+## 0.0.29
+
+### Patch Changes
+
+- 9e5bca5: Re-render the table if the table options (e.g. initialState) change.
+
+## 0.0.28
+
+### Patch Changes
+
+- b364484: Fixing header filter sort issue
+- 8c93074: Fixing TextField props
+- Updated dependencies [8c93074]
+  - @generates/swag@0.0.23
+
+## 0.0.27
+
+### Patch Changes
+
+- Updated dependencies [81bae45]
+  - @generates/swag@0.0.22
+
 ## 0.0.26
 
 ### Patch Changes
