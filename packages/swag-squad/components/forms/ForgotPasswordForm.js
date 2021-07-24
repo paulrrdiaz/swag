@@ -1,20 +1,19 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import { EmailField, LoadingButton } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
 export default function ForgotPasswordForm (props) {
-  const { register, handleSubmit } = useForm()
+  const { form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 

@@ -1,13 +1,12 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import { PasswordField, LoadingButton } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
 export default function ChangePasswordForm (props) {
-  const { register, handleSubmit } = useForm()
+  const { form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
@@ -16,7 +15,7 @@ export default function ChangePasswordForm (props) {
         label="Existing password"
         feedback={props.feedback?.existingPassword}
         css={props.css?.passwordfield}
-        register={register}
+        register={form.register}
         autocomplete="current-password"
         required
       />
@@ -26,7 +25,7 @@ export default function ChangePasswordForm (props) {
         label="New password"
         feedback={props.feedback?.newPassword}
         css={props.css?.newPasswordField}
-        register={register}
+        register={form.register}
         autocomplete="new-password"
         required
       />
