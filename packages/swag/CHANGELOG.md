@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.25
+
+### Patch Changes
+
+- 973c804: Adding support for setValue in SwitchField
+
 ## 0.0.24
 
 ### Patch Changes

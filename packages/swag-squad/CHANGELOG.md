@@ -1,5 +1,14 @@
 # @generates/swag-squad
 
+## 0.0.28
+
+### Patch Changes
+
+- 973c804: Updating forms to use form prop
+- 0d04ca3: Removing required from password in AccountForm
+- Updated dependencies [973c804]
+  - @generates/swag@0.0.25
+
 ## 0.0.27
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @generates/swag-sheet
 
+## 0.0.33
+
+### Patch Changes
+
+- bf61416: Fixing filters prop issue
+- Updated dependencies [973c804]
+  - @generates/swag@0.0.25
+
 ## 0.0.32
 
 ### Patch Changes
