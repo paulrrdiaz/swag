@@ -11,18 +11,10 @@ export default function SwitchField (props) {
     children,
     transition = { type: 'spring', mass: 0.5 },
     css = {},
-    register,
-    required,
+    setValue,
     ...rest
   } = props
   const [isOn, setIsOn] = React.useState(value)
-
-  let onChange, onBlur
-  if (register) {
-    const registered = register(props.id, { value, required })
-    onChange = registered.onChange
-    onBlur = registered.onBlur
-  }
 
   const body = stitchesCss(merge(
     {
@@ -58,9 +50,8 @@ export default function SwitchField (props) {
       onClick={() => {
         const newValue = !isOn
         setIsOn(newValue)
-        onChange && onChange({ target: { value: newValue } })
+        setValue && setValue(props.id, newValue)
       }}
-      onBlur={onBlur}
       {...rest}
     >
 

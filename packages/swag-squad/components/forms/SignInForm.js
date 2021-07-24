@@ -48,7 +48,7 @@ export default function SignInForm (props) {
             <SwitchField
               id="rememberMe"
               value={rememberMe}
-              register={form.register}
+              setValue={form.setValue}
             >
               Remember me
             </SwitchField>

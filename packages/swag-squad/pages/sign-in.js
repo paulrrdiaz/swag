@@ -12,7 +12,7 @@ export default function SignInPage () {
   const [successMessage, setSuccessMessage] = React.useState()
   const [data, setData] = React.useState()
   const [feedback, setFeedback] = React.useState()
-  const form = useForm()
+  const form = useForm({ defaultValues: { rememberMe: true } })
 
   function signIn (input) {
     console.info('Input', input)
