@@ -1,11 +1,14 @@
 import React from 'react'
 import { styled } from '@stitches/react'
+import { useForm } from 'react-hook-form'
 import Page from '../components/app/Page.js'
 import ResetPasswordForm from '../components/forms/ResetPasswordForm.js'
 
 const HeadingTwo = styled('h2')
 
 export default function ResetPasswordPage () {
+  const form = useForm()
+
   function resetPassword () {
 
   }
@@ -21,9 +24,7 @@ export default function ResetPasswordPage () {
 
       <br />
 
-      <ResetPasswordForm
-        onSubmit={resetPassword}
-      />
+      <ResetPasswordForm form={form} onSubmit={resetPassword} />
 
     </Page>
   )

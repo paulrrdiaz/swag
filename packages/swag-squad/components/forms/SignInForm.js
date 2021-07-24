@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
@@ -19,26 +18,26 @@ export default function SignInForm (props) {
       <StyledLink {...forgotPasswordLinkProps}>
         Forgot password?
       </StyledLink>
-    )
+    ),
+    form
   } = props
-  const { register, handleSubmit } = useForm()
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 
       <PasswordField
         feedback={props.feedback?.password}
         css={props.css?.passwordField}
-        register={register}
+        register={form.register}
         required
       />
 
@@ -46,7 +45,11 @@ export default function SignInForm (props) {
 
         {showRememberMe && (
           <div>
-            <SwitchField value={rememberMe}>
+            <SwitchField
+              id="rememberMe"
+              value={rememberMe}
+              register={form.register}
+            >
               Remember me
             </SwitchField>
           </div>

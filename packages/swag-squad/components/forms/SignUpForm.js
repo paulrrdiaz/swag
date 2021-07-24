@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
@@ -9,11 +8,10 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function SignUpForm (props) {
-  const { showName = true, showUsername = false } = props
-  const { register, handleSubmit } = useForm()
+  const { showName = true, showUsername = false, form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
@@ -25,7 +23,7 @@ export default function SignUpForm (props) {
             label="First name"
             feedback={props.feedback?.firstName}
             css={props.css?.firstNameField}
-            register={register}
+            register={form.register}
             required
           />
 
@@ -34,7 +32,7 @@ export default function SignUpForm (props) {
             label="Last name"
             feedback={props.feedback?.lastName}
             css={props.css?.lastNameField}
-            register={register}
+            register={form.register}
             required
           />
 
@@ -47,7 +45,7 @@ export default function SignUpForm (props) {
           label="Username"
           feedback={props.feedback?.username}
           css={props.css?.usernameField}
-          register={register}
+          register={form.register}
           required
         />
       )}
@@ -55,14 +53,14 @@ export default function SignUpForm (props) {
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 
       <PasswordField
         feedback={props.feedback?.password}
         css={props.css?.passwordfield}
-        register={register}
+        register={form.register}
         required
       />
 
