@@ -14,7 +14,7 @@ export default function HomePage () {
       <div>
         <Uploader
           onContinue={data => alert(JSON.stringify(data, undefined, 2))}
-          onCellUpdate={(ctx, value) => alert(value)}
+          onUpdateCell={(ctx, value) => alert(value)}
         />
       </div>
 

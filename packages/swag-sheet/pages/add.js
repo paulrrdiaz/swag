@@ -33,15 +33,19 @@ export default function AddPage () {
     []
   )
 
-  function onAdd (input) {
-    setIsLoading(true)
-    setTimeout(
-      () => {
-        data.push(input)
-        setIsLoading(false)
-      },
-      1000
-    )
+  function onSaveAddedRows (input) {
+    return new Promise(resolve => {
+      setIsLoading(true)
+      setTimeout(
+        () => {
+          console.log('Rows', input)
+          data.push(input)
+          setIsLoading(false)
+          resolve()
+        },
+        1000
+      )
+    })
   }
 
   return (
@@ -69,7 +73,7 @@ export default function AddPage () {
           ]}
           onPageIndex={onPageIndex}
           onSortBy={onSortBy}
-          onAdd={onAdd}
+          onSaveAddedRows={onSaveAddedRows}
           data={data}
           showLoading={true}
           isLoading={isLoading}

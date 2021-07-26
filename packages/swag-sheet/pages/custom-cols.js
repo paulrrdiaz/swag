@@ -14,7 +14,7 @@ export default function CustomColsPage () {
       <div>
         <Uploader
           onContinue={data => alert(JSON.stringify(data, undefined, 2))}
-          onCellUpdate={(ctx, value) => alert(value)}
+          onUpdateCell={(ctx, value) => alert(value)}
           columns={columns => columns.map(col => ({
             ...col,
             disableSortBy: col.id !== 'Patient Sex'
