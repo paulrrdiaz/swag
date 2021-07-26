@@ -46,7 +46,7 @@
     "@generates/swag": "^0.0.25",
     "add": "^2.0.6",
     "react-dropzone": "^11.3.4",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.11"
   },
   "peerDependencies": {
     "@stitches/react": "^0.2.2",
