@@ -1,5 +1,15 @@
 # @generates/swag-sheet
 
+## 0.0.34
+
+### Patch Changes
+
+- b15a9e6: Adding add rows functionality
+- b57350b: Fix #95
+- Updated dependencies [b15a9e6]
+- Updated dependencies [b15a9e6]
+  - @generates/swag@0.0.26
+
 ## 0.0.33
 
 ### Patch Changes

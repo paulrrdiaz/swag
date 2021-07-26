@@ -1,5 +1,12 @@
 # @generates/swag
 
+## 0.0.26
+
+### Patch Changes
+
+- b15a9e6: Reducing small button font size
+- b15a9e6: Adding small continue button variant
+
 ## 0.0.25
 
 ### Patch Changes
