@@ -1,11 +1,14 @@
 import React from 'react'
 import { styled } from '@stitches/react'
+import { useForm } from 'react-hook-form'
 import Page from '../components/app/Page.js'
 import SignUpForm from '../components/forms/SignUpForm.js'
 
 const HeadingTwo = styled('h2')
 
 export default function SignUpPage () {
+  const form = useForm()
+
   function signUp () {
 
   }
@@ -21,9 +24,7 @@ export default function SignUpPage () {
 
       <br />
 
-      <SignUpForm
-        onSubmit={signUp}
-      />
+      <SignUpForm form={form} onSubmit={signUp} />
 
     </Page>
   )

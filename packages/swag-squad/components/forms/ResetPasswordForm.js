@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
@@ -11,20 +10,17 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function ResetPasswordForm (props) {
-  const { includeToken = true } = props
-  const { register, handleSubmit } = useForm({
-    defaultValues: props.defaultValues
-  })
+  const { includeToken = true, form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 
@@ -34,7 +30,7 @@ export default function ResetPasswordForm (props) {
           label="Token"
           feedback={props.feedback?.token}
           css={props.css?.tokenField}
-          register={register}
+          register={form.register}
           required
         />
       )}
@@ -42,7 +38,7 @@ export default function ResetPasswordForm (props) {
       <PasswordField
         feedback={props.feedback?.password}
         css={props.css?.passwordfield}
-        register={register}
+        register={form.register}
         required
       />
 
@@ -50,15 +46,18 @@ export default function ResetPasswordForm (props) {
         id="passwordConfirm"
         label={
           <StyledLabel htmlFor="passwordConfirm">
+
             Password
+
             <StyledSpan css={{ marginLeft: '.5em', color: '#6B7280' }}>
               (confirm)
             </StyledSpan>
+
           </StyledLabel>
         }
         feedback={props.feedback?.passwordConfirm}
         css={props.css?.passwordConfirmField}
-        register={register}
+        register={form.register}
         required
       />
 

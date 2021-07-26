@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled } from '@stitches/react'
+import { useForm } from 'react-hook-form'
 import Page from '../components/app/Page.js'
 import SignInForm from '../components/forms/SignInForm.js'
 import { Alert, StyledDiv } from '@generates/swag'
@@ -11,6 +12,7 @@ export default function SignInPage () {
   const [successMessage, setSuccessMessage] = React.useState()
   const [data, setData] = React.useState()
   const [feedback, setFeedback] = React.useState()
+  const form = useForm({ defaultValues: { rememberMe: true } })
 
   function signIn (input) {
     console.info('Input', input)
@@ -68,6 +70,7 @@ export default function SignInPage () {
       )}
 
       <SignInForm
+        form={form}
         onSubmit={signIn}
         isLoading={isLoading}
         feedback={feedback}

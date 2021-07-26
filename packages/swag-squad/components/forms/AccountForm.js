@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import {
   EmailField,
   PasswordField,
@@ -9,13 +8,10 @@ import {
 import StyledForm from '../styled/StyledForm.js'
 
 export default function AccountForm (props) {
-  const { showName = true, showUsername = false } = props
-  const { register, handleSubmit } = useForm({
-    defaultValues: props.defaultValues
-  })
+  const { showName = true, showUsername = false, form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
@@ -27,7 +23,7 @@ export default function AccountForm (props) {
             label="First name"
             feedback={props.feedback?.firstName}
             css={props.css?.firstNameField}
-            register={register}
+            register={form.register}
             required
           />
 
@@ -36,7 +32,7 @@ export default function AccountForm (props) {
             label="Last name"
             feedback={props.feedback?.lastName}
             css={props.css?.lastNameField}
-            register={register}
+            register={form.register}
             required
           />
 
@@ -49,7 +45,7 @@ export default function AccountForm (props) {
           label="Username"
           feedback={props.feedback?.username}
           css={props.css?.usernameField}
-          register={register}
+          register={form.register}
           required
         />
       )}
@@ -57,7 +53,7 @@ export default function AccountForm (props) {
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 
@@ -66,9 +62,8 @@ export default function AccountForm (props) {
         label="Confirm password"
         feedback={props.feedback?.passwordConfirm}
         css={props.css?.passwordfield}
-        register={register}
+        register={form.register}
         autocomplete="current-password"
-        required
       />
 
       <div>

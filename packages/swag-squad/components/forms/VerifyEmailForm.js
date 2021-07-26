@@ -1,23 +1,19 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import { EmailField, LoadingButton, TextField } from '@generates/swag'
 import StyledForm from '../styled/StyledForm.js'
 
 export default function VerifyEmailForm (props) {
-  const { includeToken = true } = props
-  const { register, handleSubmit } = useForm({
-    defaultValues: props.defaultValues
-  })
+  const { includeToken = true, form } = props
 
   return (
-    <StyledForm onSubmit={handleSubmit(props.onSubmit)}>
+    <StyledForm onSubmit={form.handleSubmit(props.onSubmit)}>
 
       {props.header}
 
       <EmailField
         feedback={props.feedback?.email}
         css={props.css?.emailField}
-        register={register}
+        register={form.register}
         required
       />
 
@@ -27,12 +23,10 @@ export default function VerifyEmailForm (props) {
           label="Token"
           feedback={props.feedback?.token}
           css={props.css?.tokenField}
-          register={register}
+          register={form.register}
           required
         />
       )}
-
-      {props.footer}
 
       <div>
         <LoadingButton isLoading={props.isLoading} primary type="submit">
