@@ -49,7 +49,7 @@
     "yarn": "^1.22.11"
   },
   "peerDependencies": {
-    "@stitches/react": "^0.2.2",
+    "@stitches/react": "^0.2.3",
     "papaparse": "^5.3.1",
     "react-table": "^7.7.0"
   },
@@ -60,7 +60,7 @@
     "@changesets/cli": "^2.16.0",
     "@generates/modulizer": "^8.0.2",
     "@generates/use-query-params": "^1.0.9",
-    "@stitches/react": "^0.2.2",
+    "@stitches/react": "^0.2.3",
     "fakerator": "^0.3.3",
     "next": "^11.0.1",
     "papaparse": "^5.3.1",
