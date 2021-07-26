@@ -74,7 +74,7 @@ export default styled(
       },
       small: {
         true: {
-          fontSize: '.925em',
+          fontSize: '.875em',
           paddingLeft: '.625em',
           paddingRight: '.625em',
           lineHeight: '1.5em',
@@ -98,6 +98,15 @@ export default styled(
         css: {
           '&:focus': {
             boxShadow: '#BFDBFE 0px 0px 0px 1px'
+          }
+        }
+      },
+      {
+        small: true,
+        continue: true,
+        css: {
+          '&:focus': {
+            boxShadow: '#A7F3D0 0px 0px 0px 1px'
           }
         }
       }

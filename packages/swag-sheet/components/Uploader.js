@@ -109,7 +109,7 @@ export default function Uploader (props) {
         <Spreadsheet
           {...rest}
           data={data}
-          setData={setData}
+          onUpdateData={setData}
           css={css?.spreadsheet}
         />
       )}

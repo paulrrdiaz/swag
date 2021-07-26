@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '@stitches/react'
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table'
-import { LoadingBar } from '@generates/swag'
+import { LoadingBar, Button, StyledDiv } from '@generates/swag'
 import { merge } from '@generates/merger'
 import StyledTable from './styled/StyledTable.js'
 import StyledTableHeader from './styled/StyledTableHeader.js'
@@ -25,8 +25,12 @@ export const toStandardCol = col => merge(
 )
 
 export default function Spreadsheet (props) {
+  const { canEdit = true } = props
   const initialRender = React.useRef(true)
-  const [firstRow] = props.data || []
+  const [data, setData] = React.useState(props.data || [])
+  const [addedRows, setAddedRows] = React.useState(0)
+  const [firstRow] = data
+  const columnKeys = firstRow && Object.keys(firstRow)
   const columns = React.useMemo(
     () => {
       if (typeof props.columns === 'function') {
@@ -41,18 +45,72 @@ export default function Spreadsheet (props) {
       firstRow
     ]
   )
-  const memoizedData = React.useMemo(() => props.data, [props.data])
+  const memoizedData = React.useMemo(() => data, [data])
+  const [selectedCell, setSelectedCell] = React.useState()
+  const [focusedCell, setFocusedCell] = React.useState()
 
-  function onCellUpdate (ctx, value) {
-    if (props.canEdit) {
-      if (props.onCellUpdate) {
-        props.onCellUpdate({ ...ctx, setData: props.setData }, value)
-      } else if (props.setData) {
-        props.setData(props.data)
+  function onUpdateCell (ctx, value) {
+    if (canEdit) {
+      if (props.onUpdateCell) {
+        props.onUpdateCell({ ...ctx, setData: props.setData }, value)
       } else {
-        props.data[ctx.cell.row.index][ctx.cell.column.id] = value
+        data[ctx.cell.row.index][ctx.cell.column.id] = value
+        setData(data)
+      }
+
+      // If the row is an existing row and not an added row, call the
+      // onUpdateData hook.
+      if (props.onUpdateData && ctx.cell.row.index < props.data.length) {
+        props.onUpdateData(data)
       }
     }
+  }
+
+  function addRow () {
+    const updated = data.concat({})
+    const cellId = `cell_${updated.length - 1}_${columnKeys[0]}`
+    setAddedRows(addedRows + 1)
+    setData(updated)
+    setSelectedCell(cellId)
+    setFocusedCell(cellId)
+  }
+
+  function onTab (evt, ctx) {
+    onUpdateCell(ctx, evt.target.textContent || '')
+
+    const newColName = columnKeys[columnKeys.indexOf(ctx.cell.column.id) + 1]
+    const newColId = `cell_${ctx.cell.row.index}_${newColName}`
+    if (newColId) {
+      setSelectedCell(newColId)
+      setFocusedCell(newColId)
+    }
+  }
+
+  function onShiftTab (evt, ctx) {
+    onUpdateCell(ctx, evt.target.textContent || '')
+
+    const newColName = columnKeys[columnKeys.indexOf(ctx.cell.column.id) - 1]
+    const newColId = `cell_${ctx.cell.row.index}_${newColName}`
+    if (newColId) {
+      setSelectedCell(newColId)
+      setFocusedCell(newColId)
+    }
+  }
+
+  function onBlur (evt, ctx) {
+    setFocusedCell()
+    onUpdateCell(ctx, evt.target.textContent || '')
+  }
+
+  async function onSaveAddedRows () {
+    const rows = data.slice(data.length - addedRows, data.length)
+    await props.onSaveAddedRows(rows)
+    setAddedRows(0)
+  }
+
+  function onCancelAddedRows () {
+    setAddedRows(0)
+    setData(data.slice(0, data.length - addedRows))
   }
 
   const {
@@ -176,14 +234,15 @@ export default function Spreadsheet (props) {
               </tr>
             )}
 
+            {/* Data rows */}
+
             {rows.map((row, index) => {
               prepareRow(row)
               const { key, ...rest } = row.getRowProps()
-              const rowId = row.values[props.rowIdKey] || key
               return (
                 <StyledTr
                   key={key}
-                  data-id={rowId}
+                  data-id={key}
                   css={{
                     backgroundColor: index % 2 === 0 ? '#fff' : '#FAFAFA'
                   }}
@@ -194,11 +253,17 @@ export default function Spreadsheet (props) {
                     return (
                       <SpreadsheetCell
                         key={key}
+                        id={key}
                         cell={cell}
                         styles={props.css?.tableCell}
-                        onCellUpdate={onCellUpdate}
-                        canEdit={props.canEdit}
-                        rowId={rowId}
+                        canEdit={canEdit}
+                        isSelected={selectedCell === key}
+                        isFocused={focusedCell === key}
+                        onSelectCell={(evt, id) => setSelectedCell(id)}
+                        onFocusCell={(evt, id) => setFocusedCell(id)}
+                        onBlur={onBlur}
+                        onTab={onTab}
+                        onShiftTab={onShiftTab}
                         {...rest}
                       />
                     )
@@ -206,6 +271,71 @@ export default function Spreadsheet (props) {
                 </StyledTr>
               )
             })}
+
+            {/* Action buttons */}
+
+            {props.onSaveAddedRows && (
+              <tr>
+                <StyledTableHeader
+                  as="td"
+                  colSpan={columns.length}
+                  css={{ backgroundColor: 'transparent' }}
+                >
+                  <StyledDiv
+                    css={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+
+                    <StyledDiv css={{ flexShrink: 0 }}>
+                      <Button primary small onClick={addRow}>
+                        Add Row
+                      </Button>
+                    </StyledDiv>
+
+                    {addedRows > 0 && (
+                      <StyledDiv
+                        css={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          textAlign: 'right'
+                        }}
+                      >
+
+                        <StyledDiv css={{
+                          fontSize: '.875em',
+                          marginRight: '1em'
+                        }}>
+                          {addedRows} row(s) added
+                        </StyledDiv>
+
+                        <Button
+                          small
+                          css={{ flexShrink: 0, marginRight: '.75em' }}
+                          onClick={onCancelAddedRows}
+                        >
+                          Cancel
+                        </Button>
+
+                        <Button
+                          continue
+                          small
+                          css={{ flexShrink: 0 }}
+                          onClick={onSaveAddedRows}
+                        >
+                          Save
+                        </Button>
+
+                      </StyledDiv>
+                    )}
+
+                  </StyledDiv>
+                </StyledTableHeader>
+              </tr>
+            )}
+
           </tbody>
         </StyledTable>
       )}

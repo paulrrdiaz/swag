@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@stitches/react'
-import { StyledContainer, Button } from '@generates/swag'
+import { StyledContainer } from '@generates/swag'
 import Spreadsheet from '../components/Spreadsheet.js'
 
 const data = [
@@ -21,7 +21,7 @@ const data = [
   }
 ]
 
-export default function CustomColsPage () {
+export default function AddPage () {
   const [isLoading, setIsLoading] = React.useState(false)
 
   const onPageIndex = React.useCallback(
@@ -33,18 +33,27 @@ export default function CustomColsPage () {
     []
   )
 
+  function onSaveAddedRows (input) {
+    return new Promise(resolve => {
+      setIsLoading(true)
+      setTimeout(
+        () => {
+          console.log('Rows', input)
+          data.push(input)
+          setIsLoading(false)
+          resolve()
+        },
+        1000
+      )
+    })
+  }
+
   return (
     <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
 
       <h1>
         swag-sheet
       </h1>
-
-      <div className={css('div', { marginTop: '2em' })()}>
-        <Button primary onClick={() => setIsLoading(!isLoading)}>
-          Toggle Enabled
-        </Button>
-      </div>
 
       <div>
         <Spreadsheet
@@ -64,6 +73,7 @@ export default function CustomColsPage () {
           ]}
           onPageIndex={onPageIndex}
           onSortBy={onSortBy}
+          onSaveAddedRows={onSaveAddedRows}
           data={data}
           showLoading={true}
           isLoading={isLoading}

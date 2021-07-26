@@ -5,7 +5,7 @@ export default styled(
   {
     boxSizing: 'border-box',
     verticalAlign: 'top',
-    padding: '6px',
+    padding: '8px',
     height: '100%',
     minHeight: '35px',
     minWidth: '72px',
@@ -13,11 +13,11 @@ export default styled(
     borderStyle: 'solid',
     borderWidth: '1px',
     borderColor: '#E5E7EB',
+    cursor: 'cell',
     '&:focus': {
       outline: 'none',
-      borderWidth: '2px',
-      padding: '5px',
-      borderColor: '#3B82F6'
+      boxShadow: 'inset 0 0 0 1px #2563EB, inset 0 0 2px 2px #93C5FD',
+      cursor: 'auto'
     }
   }
 )

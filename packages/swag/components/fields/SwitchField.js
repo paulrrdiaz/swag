@@ -11,7 +11,7 @@ export default function SwitchField (props) {
     children,
     transition = { type: 'spring', mass: 0.5 },
     css = {},
-    setValue,
+    onChange,
     ...rest
   } = props
   const [isOn, setIsOn] = React.useState(value)
@@ -48,9 +48,9 @@ export default function SwitchField (props) {
     <StyledDiv
       css={merge({ display: 'flex' }, css.wrapper)}
       onClick={() => {
-        const newValue = !isOn
-        setIsOn(newValue)
-        setValue && setValue(props.id, newValue)
+        const newState = !isOn
+        setIsOn(newState)
+        onChange && onChange(newState)
       }}
       {...rest}
     >
