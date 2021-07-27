@@ -38,7 +38,7 @@ export default function SpreadsheetCell (props) {
       title={title}
       contentEditable={props.isFocused}
       suppressContentEditableWarning={true}
-      css={{ ...css, ...props.isSelected && { backgroundColor: '#F0F9FF' } }}
+      css={{ ...props.isSelected && { backgroundColor: '#F0F9FF' }, ...css }}
       onClick={evt => {
         if (evt.target.localName !== 'a') {
           if (clickTimeout && props.onFocusCell) {
