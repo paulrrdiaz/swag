@@ -1,23 +1,37 @@
 import React from 'react'
-import { css } from '@stitches/react'
-import { StyledContainer } from '@generates/swag'
-import Uploader from '../components/Uploader.js'
+import Link from 'next/link'
+import { styled } from '@stitches/react'
+import { StyledLink } from '@generates/swag'
+import Page from '../components/app/Page.js'
 
-export default function HomePage () {
+const UnorderedList = styled('ul')
+const HeadingTwo = styled('h2')
+
+export default function Home () {
   return (
-    <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
+    <Page>
 
-      <h1>
-        swag-sheet
-      </h1>
+      <br />
 
-      <div>
-        <Uploader
-          onContinue={data => alert(JSON.stringify(data, undefined, 2))}
-          onUpdateCell={(ctx, value) => alert(value)}
-        />
-      </div>
+      <HeadingTwo css={{ fontSize: '1.25em', margin: '0' }}>
+        Examples
+      </HeadingTwo>
 
-    </StyledContainer>
+      <UnorderedList css={{
+        '& li': {
+          marginTop: '.5em',
+          marginBottom: '.5em'
+        }
+      }}>
+        <li>
+          <Link href="/uploader">
+            <StyledLink>
+              Uploader
+            </StyledLink>
+          </Link>
+        </li>
+      </UnorderedList>
+
+    </Page>
   )
 }
