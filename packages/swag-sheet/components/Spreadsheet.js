@@ -102,6 +102,11 @@ export default function Spreadsheet (props) {
     onUpdateCell(ctx, evt.target.textContent || '')
   }
 
+  function onEscape () {
+    setSelectedCell()
+    setFocusedCell()
+  }
+
   async function onSaveAddedRows () {
     const rows = data.slice(data.length - addedRows, data.length)
     await props.onSaveAddedRows(rows)
@@ -262,6 +267,7 @@ export default function Spreadsheet (props) {
                         onSelectCell={(evt, id) => setSelectedCell(id)}
                         onFocusCell={(evt, id) => setFocusedCell(id)}
                         onBlur={onBlur}
+                        onEscape={onEscape}
                         onTab={onTab}
                         onShiftTab={onShiftTab}
                         {...rest}

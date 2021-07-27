@@ -66,7 +66,10 @@ export default function SpreadsheetCell (props) {
           } else if (props.onTab) {
             props.onTab(evt, ctx)
           }
-        // } else if (evt.key === 'Enter') {
+        } else if (evt.key === 'Escape' && props.onEscape) {
+          props.onEscape(evt)
+        } else if (evt.key === 'Enter' && props.onBlur) {
+          props.onBlur(evt, ctx)
         }
       }}
       onBlur={evt => props.onBlur(evt, ctx)}
