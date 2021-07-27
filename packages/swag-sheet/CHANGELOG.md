@@ -1,5 +1,13 @@
 # @generates/swag-sheet
 
+## 0.0.35
+
+### Patch Changes
+
+- f2c989b: Allow selected cell background to be overidden
+- a48c59b: Fixing uploader data update
+- 245d3f8: Adding escape and enter key bindings
+
 ## 0.0.34
 
 ### Patch Changes
