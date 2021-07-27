@@ -52,7 +52,7 @@ export default function Spreadsheet (props) {
   function onUpdateCell (ctx, value) {
     if (canEdit) {
       if (props.onUpdateCell) {
-        props.onUpdateCell({ ...ctx, setData: props.setData }, value)
+        props.onUpdateCell(ctx, value)
       } else {
         data[ctx.cell.row.index][ctx.cell.column.id] = value
         setData(data)
