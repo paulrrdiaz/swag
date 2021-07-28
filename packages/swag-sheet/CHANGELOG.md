@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.36
+
+### Patch Changes
+
+- 253caa7: Remove props.css from spreadsheetcell
+
 ## 0.0.35
 
 ### Patch Changes
