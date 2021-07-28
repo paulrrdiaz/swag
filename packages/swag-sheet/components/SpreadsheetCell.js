@@ -4,7 +4,7 @@ import StyledTableCell from './styled/StyledTableCell.js'
 export default function SpreadsheetCell (props) {
   const { canEdit = true } = props
   const [value, setValue] = React.useState(props.cell.value)
-  const [css, setCss] = React.useState(props.css)
+  const [css, setCss] = React.useState()
   const [clickTimeout, setClickTimeout] = React.useState()
   const ctx = { ...props, setCss }
   const ref = React.useRef()

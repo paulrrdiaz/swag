@@ -48,6 +48,10 @@ export default function AddPage () {
     })
   }
 
+  function onUpdateCell (ctx, value) {
+    ctx.setCss({ backgroundColor: '#FEE2E2' })
+  }
+
   return (
     <StyledContainer className={css({ fontFamily: 'sans-serif' })()}>
 
@@ -74,6 +78,7 @@ export default function AddPage () {
           onPageIndex={onPageIndex}
           onSortBy={onSortBy}
           onSaveAddedRows={onSaveAddedRows}
+          onUpdateCell={onUpdateCell}
           data={data}
           showLoading={true}
           isLoading={isLoading}

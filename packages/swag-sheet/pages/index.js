@@ -30,6 +30,13 @@ export default function Home () {
             </StyledLink>
           </Link>
         </li>
+        <li>
+          <Link href="/add">
+            <StyledLink>
+              Add rows
+            </StyledLink>
+          </Link>
+        </li>
       </UnorderedList>
 
     </Page>
