@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.37
+
+### Patch Changes
+
+- 209343e: Fixing canEdit logic and cell css
+
 ## 0.0.36
 
 ### Patch Changes
