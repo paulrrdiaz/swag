@@ -10,16 +10,13 @@ export default function SpreadsheetCell (props) {
   const ref = React.useRef()
 
   // Update the value if it's updated externally after render.
-  React.useEffect(
-    () => {
-      setValue(props.cell.value)
-      setCss(props.css)
-    },
-    [
-      props.cell.value,
-      props.css
-    ]
-  )
+  React.useEffect(() => setValue(props.cell.value), [props.cell.value])
+
+  const combinedCss = {
+    ...props.isSelected && { backgroundColor: '#F0F9FF' },
+    ...canEdit && { cursor: 'cell' },
+    ...css
+  }
 
   React.useEffect(
     () => props.isFocused && ref.current.focus(),
@@ -38,7 +35,7 @@ export default function SpreadsheetCell (props) {
       title={title}
       contentEditable={props.isFocused}
       suppressContentEditableWarning={true}
-      css={{ ...props.isSelected && { backgroundColor: '#F0F9FF' }, ...css }}
+      css={combinedCss}
       onClick={evt => {
         if (evt.target.localName !== 'a') {
           if (clickTimeout && props.onFocusCell) {
@@ -47,7 +44,7 @@ export default function SpreadsheetCell (props) {
             props.onFocusCell(evt, props.id)
           } else if (props.onSelectCell) {
             props.onSelectCell(evt, props.id)
-            if (props.onFocusCell) {
+            if (canEdit && props.onFocusCell) {
               setClickTimeout(setTimeout(
                 () => {
                   setClickTimeout()
