@@ -184,6 +184,8 @@ export default function Spreadsheet (props) {
     ]
   )
 
+  React.useEffect(() => setData(props.data), [props.data])
+
   return (
     <Wrapper css={props.css?.wrapper}>
       {props.data && (
