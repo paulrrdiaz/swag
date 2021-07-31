@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.38
+
+### Patch Changes
+
+- 34f3f5b: Fixing data update issue in spreadsheet
+
 ## 0.0.37
 
 ### Patch Changes
