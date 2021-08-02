@@ -31,7 +31,7 @@ export default function MenuPage () {
 
         <div className={css({ marginRight: '1em' })()}>
           <Menu trigger="Menu">
-            <StyledMenuItem>
+            <StyledMenuItem onClick={() => console.log('ENTER')}>
 
               <HiOutlineUserCircle className={navIcon} />
 
@@ -47,7 +47,7 @@ export default function MenuPage () {
 
       </div>
 
-      <div className={css({
+      {/* <div className={css({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -70,7 +70,7 @@ export default function MenuPage () {
           This is a menu.
         </div>
 
-      </div>
+      </div> */}
 
     </StyledContainer>
   )
