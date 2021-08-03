@@ -8,6 +8,7 @@ export { default as TextField } from './components/fields/TextField.js'
 export { default as EmailField } from './components/fields/EmailField.js'
 export { default as PasswordField } from './components/fields/PasswordField.js'
 export { default as SwitchField } from './components/fields/SwitchField.js'
+export { default as SelectField } from './components/fields/SelectField.js'
 export {
   default as StyledContainer
 } from './components/styled/StyledContainer.js'
@@ -16,6 +17,7 @@ export { default as StyledSpan } from './components/styled/StyledSpan.js'
 export { default as StyledLink } from './components/styled/StyledLink.js'
 export { default as StyledLabel } from './components/styled/StyledLabel.js'
 export { default as StyledInput } from './components/styled/StyledInput.js'
+export { default as StyledSelect } from './components/styled/StyledSelect.js'
 export {
   default as StyledMenuItem
 } from './components/styled/StyledMenuItem.js'
