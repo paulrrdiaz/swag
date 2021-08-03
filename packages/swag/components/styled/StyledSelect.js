@@ -1,3 +1,4 @@
+import { oneLine } from 'common-tags'
 import { styled } from '@stitches/react'
 
 export default styled('select', {
@@ -18,7 +19,9 @@ export default styled('select', {
   borderWidth: '1px',
   borderColor: '#D4D4D4',
   appearance: 'none',
-  backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23A3A3A3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+  backgroundImage: oneLine`
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23A3A3A3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")
+  `,
   backgroundPosition: 'right .275rem center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '1.5em 1.5em',
