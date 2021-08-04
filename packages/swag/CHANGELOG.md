@@ -1,5 +1,11 @@
 # @generates/swag
 
+## 0.0.27
+
+### Patch Changes
+
+- babf949: Adding StyledSelect and SelectField
+
 ## 0.0.26
 
 ### Patch Changes

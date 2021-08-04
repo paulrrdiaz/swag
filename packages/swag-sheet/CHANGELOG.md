@@ -1,5 +1,12 @@
 # @generates/swag-sheet
 
+## 0.0.39
+
+### Patch Changes
+
+- Updated dependencies [babf949]
+  - @generates/swag@0.0.27
+
 ## 0.0.38
 
 ### Patch Changes
