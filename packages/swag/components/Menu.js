@@ -6,19 +6,17 @@ import StyledDiv from './styled/StyledDiv.js'
 
 export default function Menu (props) {
   const [visible, setVisible] = React.useState(props.visible || false)
+  const toggle = () => setVisible(!visible)
 
   let trigger
   if (typeof props.trigger === 'string') {
     trigger = (
-      <Button
-        css={props.css?.button}
-        onClick={() => setVisible(!visible)}
-      >
+      <Button css={props.css?.button} onClick={toggle}>
         {props.trigger}
       </Button>
     )
   } else if (typeof props.trigger === 'function') {
-    trigger = props.trigger({ setVisible })
+    trigger = props.trigger({ setVisible, toggle })
   }
 
   return (
