@@ -5,10 +5,28 @@ import Button from './buttons/Button.js'
 import StyledDiv from './styled/StyledDiv.js'
 
 export default function Menu (props) {
+  const [visible, setVisible] = React.useState(props.visible || false)
+
+  let trigger
+  if (typeof props.trigger === 'string') {
+    trigger = (
+      <Button
+        css={props.css?.button}
+        onClick={() => setVisible(!visible)}
+      >
+        {props.trigger}
+      </Button>
+    )
+  } else if (typeof props.trigger === 'function') {
+    trigger = props.trigger({ setVisible })
+  }
+
   return (
     <Tippy
       placement="bottom"
-      trigger="click"
+      visible={visible}
+      interactive={true}
+      onClickOutside={() => setVisible(false)}
       content={
         <StyledDiv
           css={merge(
@@ -30,14 +48,7 @@ export default function Menu (props) {
         </StyledDiv>
       }
     >
-      {typeof props.trigger === 'string'
-        ? (
-            <Button css={props.css?.button}>
-              {props.trigger}
-            </Button>
-          )
-        : props.trigger
-      }
+      {trigger}
     </Tippy>
   )
 }
