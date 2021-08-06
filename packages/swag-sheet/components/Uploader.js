@@ -71,7 +71,7 @@ export default function Uploader (props) {
                   paddingBottom: '1em',
                   paddingLeft: '1.25em',
                   paddingRight: '1.25em',
-                  marginBottom: '1em',
+                  marginBottom: '1.5em',
                   fontSize: '1.125em',
                   fontWeight: '500'
                 }}
@@ -104,7 +104,7 @@ export default function Uploader (props) {
               wrapper: {
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                marginBottom: '1em'
+                marginBottom: '1.5em'
               }
             },
             css?.actionMenu
