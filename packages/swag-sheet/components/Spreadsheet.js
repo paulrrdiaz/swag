@@ -289,13 +289,7 @@ export default function Spreadsheet (props) {
                   colSpan={columns.length}
                   css={{ backgroundColor: 'transparent' }}
                 >
-                  <StyledDiv
-                    css={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between'
-                    }}
-                  >
+                  <StyledDiv css={{ display: 'flex', alignItems: 'center' }}>
 
                     <StyledDiv css={{ flexShrink: 0 }}>
                       <Button primary small onClick={addRow}>
@@ -308,7 +302,7 @@ export default function Spreadsheet (props) {
                         css={{
                           display: 'flex',
                           alignItems: 'center',
-                          textAlign: 'right'
+                          marginLeft: '1em'
                         }}
                       >
 

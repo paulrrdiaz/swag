@@ -82,6 +82,7 @@ export default function AddPage () {
           data={data}
           showLoading={true}
           isLoading={isLoading}
+          css={{ table: { width: '100%' } }}
         />
       </div>
 
