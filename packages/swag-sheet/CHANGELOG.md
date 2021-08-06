@@ -1,5 +1,15 @@
 # @generates/swag-sheet
 
+## 0.0.40
+
+### Patch Changes
+
+- fc097c1: Improving spreadsheet table border
+- 311980f: Dont show add row button if canEdit is false #123
+- 5ffc3ae: Fix Uploader action menu mobile layout #7
+- 907df43: Add a noData prop to Spreadsheet when there is no data. #126
+- 40fa2d6: Need to move the row action buttons over to the left in case the table is overflowing #122
+
 ## 0.0.39
 
 ### Patch Changes
