@@ -282,7 +282,7 @@ export default function Spreadsheet (props) {
 
             {/* Action buttons */}
 
-            {props.onSaveAddedRows && (
+            {props.canEdit !== false && props.onSaveAddedRows && (
               <tr>
                 <StyledTableHeader
                   as="td"
