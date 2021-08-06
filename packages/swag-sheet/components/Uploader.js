@@ -22,6 +22,7 @@ export default function Uploader (props) {
     ...rest
   } = props
   const [data, setData] = React.useState(props.data)
+  const [filename, setFilename] = React.useState()
   const ConfiguredActionMenu = components?.ActionMenu || ActionMenu
   const [isLoading, setIsLoading] = React.useState(false)
 
@@ -29,6 +30,7 @@ export default function Uploader (props) {
     setIsLoading(true)
     const [file] = files
     if (file) {
+      setFilename(file.name)
       Papa.parse(
         file,
         merge(
@@ -78,7 +80,11 @@ export default function Uploader (props) {
 
                 <input {...getInputProps()} />
 
-                Click here to select a file or drag and drop the file here
+                {filename || (
+                  <>
+                    Click here to select a file or drag and drop the file here
+                  </>
+                )}
 
               </StyledDiv>
             )}
@@ -88,7 +94,10 @@ export default function Uploader (props) {
         {/* Action menu */}
 
         <ConfiguredActionMenu
-          onClear={() => onClear({ setData })}
+          onClear={() => {
+            setFilename()
+            onClear({ setData })
+          }}
           onContinue={() => onContinue(data)}
           css={merge(
             {
