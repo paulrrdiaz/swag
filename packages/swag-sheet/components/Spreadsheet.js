@@ -191,11 +191,11 @@ export default function Spreadsheet (props) {
     ]
   )
 
-  React.useEffect(() => setData(props.data), [props.data])
+  React.useEffect(() => setData(props.data || []), [props.data])
 
   return (
     <Wrapper css={props.css?.wrapper}>
-      {props.data && (
+      {columns.length && (
         <StyledTable {...getTableProps()} css={props.css?.table}>
           <thead>
             {headerGroups.map(headerGroup => {
@@ -286,6 +286,24 @@ export default function Spreadsheet (props) {
                 </StyledTr>
               )
             })}
+
+            {!rows?.length && props.noData !== false && (
+              <tr>
+                <StyledTableHeader
+                  as="td"
+                  colSpan={columns.length}
+                  css={{
+                    backgroundColor: 'transparent',
+                    textAlign: 'center',
+                    paddingTop: '1em',
+                    paddingBottom: '1em',
+                    fontWeight: 'medium'
+                  }}
+                >
+                  {props.noData || 'No data to display'}
+                </StyledTableHeader>
+              </tr>
+            )}
 
             {/* Action buttons */}
 
