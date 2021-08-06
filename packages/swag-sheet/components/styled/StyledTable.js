@@ -5,6 +5,6 @@ export default styled(
   {
     borderCollapse: 'collapse',
     borderSpacing: 'unset',
-    marginTop: '24px'
+    borderStyle: 'hidden'
   }
 )

@@ -7,7 +7,14 @@ import StyledTable from './styled/StyledTable.js'
 import StyledTableHeader from './styled/StyledTableHeader.js'
 import SpreadsheetCell from './SpreadsheetCell.js'
 
-const Wrapper = styled('div', { overflowX: 'scroll' })
+const Wrapper = styled(
+  'div',
+  {
+    overflowX: 'scroll',
+    border: '1px solid #E5E7EB',
+    borderRadius: '.375em'
+  }
+)
 const StyledTr = styled('tr')
 
 export const toCol = header => ({

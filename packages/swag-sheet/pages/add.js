@@ -59,6 +59,8 @@ export default function AddPage () {
         swag-sheet
       </h1>
 
+      <br />
+
       <div>
         <Spreadsheet
           columns={[
