@@ -7,7 +7,10 @@ import Dropzone from 'react-dropzone'
 import Spreadsheet from './Spreadsheet.js'
 import ActionMenu from './ActionMenu.js'
 
-const HeaderWrapper = styled('div', { display: 'flex', alignItems: 'center' })
+const HeaderWrapper = styled(
+  'div',
+  { display: 'flex', alignItems: 'center', flexWrap: 'wrap' }
+)
 
 export default function Uploader (props) {
   const {
@@ -52,7 +55,7 @@ export default function Uploader (props) {
 
         {/* File input */}
 
-        <div>
+        <StyledDiv css={{ flexGrow: '1' }}>
           <Dropzone onDrop={handleFile}>
             {({ getRootProps, getInputProps }) => (
               <StyledDiv
@@ -66,6 +69,7 @@ export default function Uploader (props) {
                   paddingBottom: '1em',
                   paddingLeft: '1.25em',
                   paddingRight: '1.25em',
+                  marginBottom: '1em',
                   fontSize: '1.125em',
                   fontWeight: '500'
                 }}
@@ -79,7 +83,7 @@ export default function Uploader (props) {
               </StyledDiv>
             )}
           </Dropzone>
-        </div>
+        </StyledDiv>
 
         {/* Action menu */}
 
@@ -87,7 +91,13 @@ export default function Uploader (props) {
           onClear={() => onClear({ setData })}
           onContinue={() => onContinue(data)}
           css={merge(
-            { wrapper: { marginLeft: 'auto' } },
+            {
+              wrapper: {
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginBottom: '1em'
+              }
+            },
             css?.actionMenu
           )}
         />
