@@ -37,7 +37,6 @@ export default function Spreadsheet (props) {
   const [data, setData] = React.useState(props.data || [])
   const [addedRows, setAddedRows] = React.useState(0)
   const [firstRow] = data
-  const columnKeys = firstRow && Object.keys(firstRow)
   const columns = React.useMemo(
     () => {
       if (typeof props.columns === 'function') {
@@ -75,7 +74,7 @@ export default function Spreadsheet (props) {
 
   function addRow () {
     const updated = data.concat({})
-    const cellId = `cell_${updated.length - 1}_${columnKeys[0]}`
+    const cellId = `cell_${updated.length - 1}_${columns[0].id}`
     setAddedRows(addedRows + 1)
     setData(updated)
     setSelectedCell(cellId)
@@ -85,9 +84,10 @@ export default function Spreadsheet (props) {
   function onTab (evt, ctx) {
     onUpdateCell(ctx, evt.target.textContent || '')
 
-    const newColName = columnKeys[columnKeys.indexOf(ctx.cell.column.id) + 1]
-    const newColId = `cell_${ctx.cell.row.index}_${newColName}`
-    if (newColId) {
+    const index = columns.findIndex(c => c.id === ctx.cell.column.id)
+    const newCol = columns[index + 1]
+    if (newCol) {
+      const newColId = `cell_${ctx.cell.row.index}_${newCol.id}`
       setSelectedCell(newColId)
       setFocusedCell(newColId)
     }
@@ -96,9 +96,10 @@ export default function Spreadsheet (props) {
   function onShiftTab (evt, ctx) {
     onUpdateCell(ctx, evt.target.textContent || '')
 
-    const newColName = columnKeys[columnKeys.indexOf(ctx.cell.column.id) - 1]
-    const newColId = `cell_${ctx.cell.row.index}_${newColName}`
-    if (newColId) {
+    const index = columns.findIndex(c => c.id === ctx.cell.column.id)
+    const newCol = columns[index - 1]
+    if (newCol) {
+      const newColId = `cell_${ctx.cell.row.index}_${newCol.id}`
       setSelectedCell(newColId)
       setFocusedCell(newColId)
     }
