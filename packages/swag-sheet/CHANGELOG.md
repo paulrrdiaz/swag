@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.41
+
+### Patch Changes
+
+- 3d12632: Initial column no longer focused when adding row #121
+
 ## 0.0.40
 
 ### Patch Changes
