@@ -14,9 +14,27 @@ export default styled(
     borderWidth: '1px',
     borderColor: '#E5E7EB',
     '&:focus': {
-      outline: 'none',
-      boxShadow: 'inset 0 0 0 1px #2563EB, inset 0 0 2px 2px #93C5FD',
-      cursor: 'auto'
+      backgroundColor: '#F0F9FF',
+      outline: 'none'
+    },
+    variants: {
+      editor: {
+        true: {
+          outline: 'none',
+          boxShadow: 'inset 0 0 0 1px #2563EB, inset 0 0 2px 2px #93C5FD',
+          cursor: 'auto'
+        }
+      },
+      selected: {
+        true: {
+          backgroundColor: '#F0F9FF'
+        }
+      },
+      canEdit: {
+        true: {
+          cursor: 'cell'
+        }
+      }
     }
   }
 )
