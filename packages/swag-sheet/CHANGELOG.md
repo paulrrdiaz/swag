@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.43
+
+### Patch Changes
+
+- cb7a27b: If onBlur evt.target is a add row button, execute relevant callback instead of onBlur #139
+
 ## 0.0.42
 
 ### Patch Changes
