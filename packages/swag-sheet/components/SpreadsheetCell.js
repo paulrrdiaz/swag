@@ -69,7 +69,11 @@ export default function SpreadsheetCell (props) {
           props.onBlur(evt, ctx)
         }
       }}
-      onBlur={evt => props.onBlur(evt, ctx)}
+      onBlur={evt => {
+        if (!evt.relatedTarget?.getAttribute('data-swag-button')) {
+          props.onBlur(evt, ctx)
+        }
+      }}
       {...props.cell.getCellProps()}
     >
       {value}

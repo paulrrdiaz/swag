@@ -318,7 +318,15 @@ export default function Spreadsheet (props) {
                   <StyledDiv css={{ display: 'flex', alignItems: 'center' }}>
 
                     <StyledDiv css={{ flexShrink: 0 }}>
-                      <Button primary small onClick={addRow}>
+                      <Button
+                        primary
+                        small
+                        onClick={addRow}
+                        // This is necessary to get relatedTarget in the cell
+                        // onBlur event and prevent a render.
+                        data-swag-button
+                        onMouseDown={evt => evt.target.focus()}
+                      >
                         Add Row
                       </Button>
                     </StyledDiv>
@@ -343,6 +351,10 @@ export default function Spreadsheet (props) {
                           small
                           css={{ flexShrink: 0, marginRight: '.75em' }}
                           onClick={onCancelAddedRows}
+                          // This is necessary to get relatedTarget in the cell
+                          // onBlur event and prevent a render.
+                          data-swag-button
+                          onMouseDown={evt => evt.target.focus()}
                         >
                           Cancel
                         </Button>
@@ -352,6 +364,10 @@ export default function Spreadsheet (props) {
                           small
                           css={{ flexShrink: 0 }}
                           onClick={onSaveAddedRows}
+                          // This is necessary to get relatedTarget in the cell
+                          // onBlur event and prevent a render.
+                          data-swag-button
+                          onMouseDown={evt => evt.target.focus()}
                         >
                           Save
                         </Button>
