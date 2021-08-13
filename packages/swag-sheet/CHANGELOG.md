@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.42
+
+### Patch Changes
+
+- c182354: Don't call onUpdateCell on added row cells #138
+
 ## 0.0.41
 
 ### Patch Changes
