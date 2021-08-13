@@ -56,7 +56,7 @@ export default function Spreadsheet (props) {
   const [focusedCell, setFocusedCell] = React.useState()
 
   async function onUpdateCell (ctx, value) {
-    if (canEdit) {
+    if (canEdit && data.length - addedRows - 1 >= ctx.cell.row.index) {
       data[ctx.cell.row.index][ctx.cell.column.id] = value
       setData(data)
 
