@@ -56,19 +56,20 @@ export default function Spreadsheet (props) {
   const [focusedCell, setFocusedCell] = React.useState()
 
   async function onUpdateCell (ctx, value) {
-    if (canEdit && data.length - addedRows - 1 >= ctx.cell.row.index) {
+    if (canEdit) {
       data[ctx.cell.row.index][ctx.cell.column.id] = value
       setData(data)
 
-      if (props.onUpdateCell) {
+      // If the row is an existing row and not an added row, call the
+      // onUpdateCell hook.
+      const isExisting = (data.length - addedRows - 1) >= ctx.cell.row.index
+      if (isExisting && props.onUpdateCell) {
         await props.onUpdateCell({ ...ctx, setData }, value)
       }
 
       // If the row is an existing row and not an added row, call the
       // onUpdateData hook.
-      if (props.onUpdateData && ctx.cell.row.index < props.data.length) {
-        props.onUpdateData(data)
-      }
+      if (isExisting && props.onUpdateData) props.onUpdateData(data)
     }
   }
 
