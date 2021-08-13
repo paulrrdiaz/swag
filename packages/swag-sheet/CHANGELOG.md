@@ -1,5 +1,11 @@
 # @generates/swag-sheet
 
+## 0.0.44
+
+### Patch Changes
+
+- f06476b: Fix onUpdateCell logic for added rows
+
 ## 0.0.43
 
 ### Patch Changes
