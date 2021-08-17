@@ -32,6 +32,10 @@ export default function AddPage () {
     sortBy => console.log('Sort by', sortBy),
     []
   )
+  const onRowIsSelected = React.useCallback(
+    rows => console.log('Selected row', rows),
+    []
+  )
 
   function onSaveAddedRows (input) {
     return new Promise(resolve => {
@@ -63,6 +67,18 @@ export default function AddPage () {
         <Spreadsheet
           columns={[
             {
+              id: 'Selection',
+              Cell: function RowSelection ({ row }) {
+                const { indeterminate, ...rest } = row.getToggleRowSelectedProps()
+                return <input
+                  type="checkbox"
+                  className="form-checkbox"
+                  {...rest}
+                />
+              },
+              disableSortBy: false
+            },
+            {
               id: 'Driver Name',
               disableSortBy: false
             },
@@ -79,6 +95,7 @@ export default function AddPage () {
           onSortBy={onSortBy}
           onSaveAddedRows={onSaveAddedRows}
           onUpdateCell={onUpdateCell}
+          onRowIsSelected={onRowIsSelected}
           data={data}
           showLoading={true}
           isLoading={isLoading}
