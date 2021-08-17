@@ -72,7 +72,7 @@ export default function SpreadsheetCell (props) {
       onBlur={evt => props.onBlur(evt, ctx)}
       {...props.cell.getCellProps()}
     >
-      {value}
+      {value || props.cell.render('Cell')}
     </StyledTableCell>
   )
 }
